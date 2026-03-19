@@ -50,6 +50,9 @@ export const metadata: Metadata = {
     'Alien Devices',
     'Systematic Audio',
   ],
+  icons: {
+    icon: '/logo-icon.png',
+  },
   alternates: {
     canonical: SITE_URL,
   },

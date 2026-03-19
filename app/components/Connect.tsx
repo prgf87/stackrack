@@ -1,3 +1,8 @@
+'use client';
+
+import { useState, useTransition } from 'react';
+import { sendNewsletterSignup } from '../actions/sendNewsletter';
+
 const SOCIALS = [
   {
     name: 'SoundCloud',
@@ -37,10 +42,22 @@ const SOCIALS = [
 ];
 
 export default function Connect() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isPending, startTransition] = useTransition();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    startTransition(async () => {
+      const result = await sendNewsletterSignup(email);
+      setStatus(result.success ? 'success' : 'error');
+    });
+  };
+
   return (
     <section id="connect" className="py-24 md:py-32 px-6 md:px-8 bg-[#0d0d18]">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs tracking-[0.5em] text-purple-400 uppercase mb-5">Follow the Signal</p>
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">Follow the Signal</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-12 tracking-wide">
           Connect
         </h2>
@@ -65,16 +82,37 @@ export default function Connect() {
           <p className="text-gray-600 text-xs tracking-wide mb-5 uppercase">
             Stay informed — releases, shows, no spam
           </p>
-          <div className="flex gap-0">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 bg-white/5 border border-white/10 border-r-0 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-purple-600/80 transition-colors duration-200"
-            />
-            <button className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white text-[11px] tracking-[0.2em] uppercase transition-all duration-300 shrink-0">
-              Subscribe
-            </button>
-          </div>
+
+          {status === 'success' ? (
+            <p className="text-emerald-400 text-xs tracking-[0.3em] uppercase py-4">
+              You&apos;re on the list — check your inbox.
+            </p>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex gap-0">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 bg-white/5 border border-white/10 border-r-0 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-blue-600/80 transition-colors duration-200"
+              />
+              <button
+                type="submit"
+                disabled={isPending}
+                className="px-6 py-3 bg-blue-700 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[11px] tracking-[0.2em] uppercase transition-all duration-300 shrink-0"
+              >
+                {isPending ? '…' : 'Subscribe'}
+              </button>
+            </form>
+          )}
+
+          {status === 'error' && (
+            <p className="text-red-400 text-xs mt-3">
+              Something went wrong — try again or email{' '}
+              <a href="mailto:stackrack@live.com" className="underline">stackrack@live.com</a>.
+            </p>
+          )}
         </div>
       </div>
     </section>

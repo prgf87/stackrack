@@ -10,7 +10,7 @@ export default function Footer() {
         className="w-full h-px mb-12"
         style={{
           background:
-            'linear-gradient(90deg, transparent 0%, #7c3aed 20%, #3b82f6 40%, #00ff88 60%, #7c3aed 80%, transparent 100%)',
+            'linear-gradient(90deg, transparent 0%, #1d4ed8 20%, #3b82f6 40%, #00ff88 60%, #1d4ed8 80%, transparent 100%)',
         }}
       />
 
@@ -34,7 +34,7 @@ export default function Footer() {
               <a
                 key={link}
                 href={`#${link}`}
-                className="text-gray-700 hover:text-purple-400 text-[11px] tracking-[0.2em] uppercase transition-colors duration-200"
+                className="text-gray-700 hover:text-emerald-400 text-[11px] tracking-[0.2em] uppercase transition-colors duration-200"
               >
                 {link}
               </a>

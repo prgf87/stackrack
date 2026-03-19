@@ -7,7 +7,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Text */}
           <div>
-            <p className="text-xs tracking-[0.5em] text-purple-400 uppercase mb-5">About</p>
+            <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">About</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
               Pedro Ferreira
             </h2>
@@ -21,7 +21,7 @@ export default function About() {
               <p>
                 His first live performance was at The Fridge, London in 2008 alongside Scorb, RAM,
                 and NRS. His debut album{' '}
-                <em className="text-purple-400 not-italic font-medium">Planetary Collisions</em>{' '}
+                <em className="text-emerald-400 not-italic font-medium">Planetary Collisions</em>{' '}
                 (2009) was praised for its depth and variety.
               </p>
               <p>
@@ -56,7 +56,7 @@ export default function About() {
             <div
               className="absolute -inset-0.5 rounded-sm blur opacity-50"
               style={{
-                background: 'linear-gradient(135deg, #7c3aed, #3b82f6, #7c3aed)',
+                background: 'linear-gradient(135deg, #1d4ed8, #00ff88, #1d4ed8)',
               }}
             />
             <div className="relative aspect-square overflow-hidden rounded-sm">

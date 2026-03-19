@@ -55,7 +55,7 @@ export default function Navbar() {
           ))}
           <a
             href="#bookings"
-            className="ml-4 px-5 py-2 border border-purple-600/60 text-purple-400 hover:bg-purple-600 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
+            className="ml-4 px-5 py-2 border border-blue-600/60 text-blue-400 hover:bg-blue-700 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
           >
             Book Now
           </a>
