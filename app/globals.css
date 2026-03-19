@@ -1,1 +1,44 @@
 @import 'tailwindcss';
+@source not "../assets/**";
+
+@theme {
+  --font-display: var(--font-orbitron), 'Orbitron', sans-serif;
+  --font-sans: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #0a0a0f;
+}
+
+::selection {
+  background: rgba(168, 85, 247, 0.4);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 2px;
+}
