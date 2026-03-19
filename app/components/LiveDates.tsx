@@ -1,9 +1,9 @@
 const DATES = [
   // Replace these with real dates when available
   {
-    date: "Sat 26-28 September 2026",
-    iso: "2026-09-26",
-    event: "Sculpted Sounds Festival",
+    date: "Sat 25-27 September 2026",
+    iso: "2026-09-25",
+    event: "TBC",
     city: "San Francisco",
     country: "USA",
     ticketUrl: "https://sculptedsounds.com/",
