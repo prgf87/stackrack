@@ -6,6 +6,7 @@
   --font-sans: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
 }
 
+/* Durations locked to 147 BPM (1 beat = 408.16ms) */
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
@@ -15,6 +16,11 @@
   0% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 * {
