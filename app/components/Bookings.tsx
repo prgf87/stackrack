@@ -25,12 +25,12 @@ export default function Bookings() {
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-purple-600/80 transition-colors duration-200";
+    "w-full bg-white/5 border border-white/10 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-blue-600/80 transition-colors duration-200";
 
   return (
     <section id="bookings" className="py-24 md:py-32 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-purple-400 uppercase mb-5">
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">
           Get in Touch
         </p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide">
@@ -43,7 +43,7 @@ export default function Bookings() {
 
         {status === "success" ? (
           <div className="py-16 text-center border border-white/8">
-            <p className="text-purple-400 text-xs tracking-[0.5em] uppercase mb-3">
+            <p className="text-emerald-400 text-xs tracking-[0.5em] uppercase mb-3">
               Enquiry Sent
             </p>
             <p className="text-white text-lg mb-2">
@@ -115,9 +115,15 @@ export default function Bookings() {
                 }
                 className={`${inputClass} cursor-pointer`}
               >
-                <option value="DJ Set">DJ Set</option>
-                <option value="Live Set">Live Set</option>
-                <option value="Both">Both</option>
+                <option className="bg-[#0a0a0f] text-white" value="DJ Set">
+                  DJ Set
+                </option>
+                <option className="bg-[#0a0a0f] text-white" value="Live Set">
+                  Live Set
+                </option>
+                <option className="bg-[#0a0a0f] text-white" value="Both">
+                  Both
+                </option>
               </select>
             </div>
 
@@ -144,7 +150,7 @@ export default function Bookings() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full py-4 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(168,85,247,0.4)]"
+              className="w-full py-4 bg-blue-700 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
             >
               {isPending ? "Sending…" : "Send Booking Enquiry"}
             </button>
@@ -158,7 +164,7 @@ export default function Bookings() {
             </p>
             <a
               href="mailto:stackrack@live.com"
-              className="text-purple-400 hover:text-purple-300 transition-colors text-sm"
+              className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm"
             >
               stackrack@live.com
             </a>

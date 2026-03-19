@@ -26,7 +26,7 @@ html {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.4);
+  background: rgba(0, 255, 136, 0.25);
   color: white;
 }
 
@@ -39,6 +39,6 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7c3aed;
+  background: #1d4ed8;
   border-radius: 2px;
 }

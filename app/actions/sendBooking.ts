@@ -4,9 +4,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// After stackrack.co.uk is verified in Resend dashboard, change this to:
-// 'Stack Rack <noreply@stackrack.co.uk>'
-const FROM = 'Stack Rack <onboarding@resend.dev>';
+const FROM = 'Stack Rack <noreply@stackrack.co.uk>';
 
 export type BookingFormData = {
   name: string;
@@ -20,7 +18,7 @@ export type BookingFormData = {
 
 export async function sendBookingEnquiry(data: BookingFormData) {
   try {
-    // Notification to Pedro
+    // Notification to Stack Rack
     await resend.emails.send({
       from: FROM,
       to: 'stackrack@live.com',
@@ -61,7 +59,8 @@ export async function sendBookingEnquiry(data: BookingFormData) {
     });
 
     return { success: true };
-  } catch {
+  } catch (err) {
+    console.error('Resend error:', err);
     return { success: false };
   }
 }

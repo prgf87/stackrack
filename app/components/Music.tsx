@@ -87,7 +87,7 @@ export default function Music() {
   return (
     <section id="music" className="py-24 md:py-32 px-6 md:px-8 bg-[#0d0d18]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-purple-400 uppercase mb-5">Discography</p>
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">Discography</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-12 tracking-wide">
           The Music
         </h2>
@@ -100,7 +100,7 @@ export default function Music() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-5 py-3 text-[11px] tracking-[0.2em] uppercase transition-all duration-200 ${
                 activeTab === tab.id
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-blue-700 text-white'
                   : 'text-gray-500 hover:text-gray-200 hover:bg-white/5'
               }`}
             >
@@ -123,7 +123,7 @@ export default function Music() {
                 />
                 <div className="flex flex-col justify-center gap-4">
                   <div>
-                    <p className="text-[10px] tracking-[0.4em] text-purple-400 uppercase mb-1">Latest Release</p>
+                    <p className="text-[10px] tracking-[0.4em] text-emerald-400 uppercase mb-1">Latest Release</p>
                     <p className="text-white text-xl font-display font-bold tracking-wide">{latest.title}</p>
                     <p className="text-gray-500 text-xs mt-1">{latest.label} · {latest.year}</p>
                   </div>
@@ -140,7 +140,7 @@ export default function Music() {
                       href="https://stackrack.bandcamp.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2.5 border border-white/20 hover:border-purple-500/60 text-gray-300 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-300"
+                      className="px-6 py-2.5 border border-white/20 hover:border-blue-500/60 text-gray-300 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-300"
                     >
                       Bandcamp
                     </a>
@@ -207,7 +207,7 @@ export default function Music() {
         {/* Divider */}
         <div className="mb-10">
           <p className="text-xs tracking-[0.4em] text-gray-600 uppercase mb-6">All Releases</p>
-          <div className="w-12 h-px bg-purple-600/60" />
+          <div className="w-12 h-px bg-blue-600/60" />
         </div>
 
         {/* Release cards grid */}
@@ -218,7 +218,7 @@ export default function Music() {
               href={release.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group overflow-hidden bg-white/3 hover:bg-white/8 border border-white/5 hover:border-purple-600/40 transition-all duration-300"
+              className="group overflow-hidden bg-white/3 hover:bg-white/8 border border-white/5 hover:border-blue-600/40 transition-all duration-300"
             >
               <div className="aspect-square overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

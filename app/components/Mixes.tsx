@@ -4,7 +4,7 @@ export default function Mixes() {
   return (
     <section id="mixes" className="py-24 md:py-32 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-purple-400 uppercase mb-5">Mixes & Radio</p>
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">Mixes & Radio</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
           Hear It Live
         </h2>
@@ -38,7 +38,7 @@ export default function Mixes() {
             height="166"
             scrolling="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/stackrack/are-you-out-there-remix&color=%23a855f7&auto_play=false&visual=true"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/stackrack/are-you-out-there-remix&color=%2300ff88&auto_play=false&visual=true"
             className="border-0 block"
             title="Stack Rack on SoundCloud"
           />
@@ -60,7 +60,7 @@ export default function Mixes() {
             </a>
             <a
               href="#bookings"
-              className="px-5 py-2.5 border border-purple-600/50 text-purple-400 hover:bg-purple-600 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
+              className="px-5 py-2.5 border border-blue-600/50 text-blue-400 hover:bg-blue-700 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
             >
               Request EPK
             </a>
