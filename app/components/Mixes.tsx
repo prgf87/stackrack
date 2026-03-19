@@ -1,10 +1,12 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Mixes() {
   return (
     <section id="mixes" className="py-24 md:py-32 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">Mixes & Radio</p>
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">
+          Mixes & Radio
+        </p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
           Hear It Live
         </h2>
@@ -16,7 +18,8 @@ export default function Mixes() {
               src="/live-dj-1.jpeg"
               alt="Stack Rack live DJ set — close-up of decks under purple UV lights"
               fill
-              className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              sizes="(max-width: 768px) 50vw, 33vw"
+              className="object-cover object-top hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
           </div>
@@ -25,6 +28,7 @@ export default function Mixes() {
               src="/live-dj-2.jpeg"
               alt="Stack Rack performing live under blue UV lights"
               fill
+              sizes="(max-width: 768px) 50vw, 33vw"
               className="object-cover object-top hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
@@ -46,8 +50,12 @@ export default function Mixes() {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-white/8 bg-white/2">
           <div>
-            <p className="text-gray-400 text-sm">More mixes and free tracks available on SoundCloud.</p>
-            <p className="text-gray-600 text-xs mt-1">EPK and tech rider available on request.</p>
+            <p className="text-gray-400 text-sm">
+              More mixes and free tracks available on SoundCloud.
+            </p>
+            <p className="text-gray-600 text-xs mt-1">
+              EPK and tech rider available on request.
+            </p>
           </div>
           <div className="flex gap-3 shrink-0">
             <a

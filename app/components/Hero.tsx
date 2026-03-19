@@ -3,16 +3,24 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
+const TUNNEL_COLORS = ["#1d4ed8", "#2563eb", "#00d4ff", "#00ff88", "#3b82f6"];
+
 const PARTICLE_COLORS = [
   "#1d4ed8",
   "#2563eb",
   "#3b82f6",
   "#60a5fa",
-  "#93c5fd",
   "#00ff88",
-  "#00e085",
   "#00d4ff",
 ];
+
+interface Ring {
+  progress: number;
+  speed: number;
+  colorIndex: number;
+  sides: number;
+  rotation: number;
+}
 
 interface Particle {
   x: number;
@@ -37,7 +45,7 @@ export default function Hero() {
 
     let animId: number;
     let frame = 0;
-    const particles: Particle[] = [];
+    let colorCounter = 0;
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -45,25 +53,111 @@ export default function Hero() {
     };
     resize();
 
-    for (let i = 0; i < 130; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 0.4,
-        dx: (Math.random() - 0.5) * 0.35,
-        dy: (Math.random() - 0.5) * 0.35,
-        opacity: Math.random() * 0.5 + 0.15,
-        color:
-          PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
-        pulseSpeed: Math.random() * 0.02 + 0.005,
-        pulseOffset: Math.random() * Math.PI * 2,
-      });
-    }
+    const RING_COUNT = 14;
+    const rings: Ring[] = Array.from({ length: RING_COUNT }, (_, i) => ({
+      progress: i / RING_COUNT,
+      speed: 0.0025 + Math.random() * 0.0015,
+      colorIndex: i % TUNNEL_COLORS.length,
+      sides: i % 3 === 0 ? 3 : 6,
+      rotation: i % 3 === 0 ? Math.PI / 6 : Math.PI / 12,
+    }));
 
-    const draw = () => {
+    const particles: Particle[] = Array.from({ length: 65 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.28,
+      dy: (Math.random() - 0.5) * 0.28,
+      opacity: Math.random() * 0.35 + 0.08,
+      color:
+        PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+      pulseSpeed: Math.random() * 0.02 + 0.005,
+      pulseOffset: Math.random() * Math.PI * 2,
+    }));
+
+    const drawPolygon = (
+      c: CanvasRenderingContext2D,
+      cx: number,
+      cy: number,
+      sides: number,
+      radius: number,
+      rotation: number,
+    ) => {
+      c.beginPath();
+      for (let i = 0; i < sides; i++) {
+        const angle = ((2 * Math.PI) / sides) * i + rotation;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy + radius * Math.sin(angle);
+        if (i === 0) c.moveTo(x, y);
+        else c.lineTo(x, y);
+      }
+      c.closePath();
+    };
+
+    const BEAT_MS = 60000 / 147; // ~408.16ms
+
+    const draw = (timestamp: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       frame++;
 
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const maxRadius = Math.max(canvas.width, canvas.height) * 0.82;
+
+      // Beat-synced centre glow — peaks on every 147 BPM beat
+      const beatPhase = (timestamp % BEAT_MS) / BEAT_MS;
+      const beatPulse = Math.pow(Math.cos(beatPhase * Math.PI), 2);
+      const glowR = 120 + beatPulse * 60;
+      const glowIntensity = 0.08 + beatPulse * 0.14;
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
+      grd.addColorStop(0, `rgba(0, 212, 255, ${glowIntensity})`);
+      grd.addColorStop(0.35, `rgba(29, 78, 216, ${glowIntensity * 0.5})`);
+      grd.addColorStop(1, "transparent");
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = grd;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Tunnel rings
+      rings.forEach((ring) => {
+        ring.progress += ring.speed;
+        if (ring.progress >= 1) {
+          ring.progress = 0;
+          colorCounter++;
+          ring.colorIndex = colorCounter % TUNNEL_COLORS.length;
+        }
+
+        const eased = Math.pow(ring.progress, 1.6);
+        const radius = eased * maxRadius;
+
+        const opacity =
+          ring.progress < 0.12
+            ? (ring.progress / 0.12) * 0.55
+            : ring.progress > 0.72
+              ? ((1 - ring.progress) / 0.28) * 0.55
+              : 0.55;
+
+        ctx.strokeStyle = TUNNEL_COLORS[ring.colorIndex];
+        ctx.lineWidth = 0.7;
+        ctx.globalAlpha = opacity;
+        drawPolygon(ctx, cx, cy, ring.sides, radius, ring.rotation);
+        ctx.stroke();
+
+        // Inner echo — swapped sides, counter-rotated
+        ctx.globalAlpha = opacity * 0.3;
+        ctx.lineWidth = 0.4;
+        drawPolygon(
+          ctx,
+          cx,
+          cy,
+          ring.sides === 3 ? 6 : 3,
+          radius * 0.58,
+          ring.rotation + Math.PI / ring.sides,
+        );
+        ctx.stroke();
+      });
+
+      // Ambient particles
+      ctx.globalAlpha = 1;
       particles.forEach((p) => {
         p.x += p.dx;
         p.y += p.dy;
@@ -74,7 +168,6 @@ export default function Hero() {
 
         const pulse =
           Math.sin(frame * p.pulseSpeed + p.pulseOffset) * 0.2 + 0.8;
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
@@ -103,23 +196,43 @@ export default function Hero() {
       {/* Base background */}
       <div className="absolute inset-0 bg-[#0a0a0f]" />
 
-      {/* Animated radial glow */}
+      {/* Outer radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 45%, rgba(29,78,216,0.22) 0%, rgba(0,255,136,0.07) 40%, transparent 70%)",
-          animation: "pulse-glow 10s ease-in-out infinite",
+            "radial-gradient(ellipse 70% 55% at 50% 50%, rgba(29,78,216,0.18) 0%, rgba(0,255,136,0.05) 45%, transparent 70%)",
+          animation: "pulse-glow 6.531s ease-in-out infinite",
         }}
       />
 
-      {/* Particle canvas */}
+      {/* Sacred geometry watermark */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{ mixBlendMode: "screen" }}
+      >
+        <Image
+          src="/logo-icon.png"
+          alt=""
+          width={820}
+          height={820}
+          className="opacity-[0.055] select-none"
+          style={{
+            filter: "invert(1)",
+            animation: "spin-slow 90s linear infinite",
+          }}
+          aria-hidden
+          priority
+        />
+      </div>
+
+      {/* Canvas — tunnel rings + particles */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
-      {/* Bottom gradient fade to next section */}
+      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0f] to-transparent pointer-events-none" />
 
       {/* Main content */}
@@ -146,7 +259,7 @@ export default function Hero() {
         </div>
 
         <p className="text-gray-500 text-sm md:text-base tracking-[0.35em] uppercase mb-12">
-          UK Underground Psychedelic Trance
+          UK Underground Psytrance Artist & DJ
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">
@@ -172,7 +285,7 @@ export default function Hero() {
         </span>
         <div
           className="w-px h-10 bg-gradient-to-b from-blue-600 to-transparent"
-          style={{ animation: "float-up 2s ease-in-out infinite" }}
+          style={{ animation: "float-up 1.633s ease-in-out infinite" }}
         />
       </div>
     </section>
