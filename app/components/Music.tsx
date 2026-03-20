@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 type Tab = 'bandcamp' | 'spotify' | 'beatport';
 
@@ -171,12 +172,15 @@ export default function Music() {
             const latest = RELEASES[0];
             return (
               <div className="flex flex-col sm:flex-row gap-6 border border-white/5 bg-white/3 p-5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={latest.cover}
-                  alt={`Stack Rack — ${latest.title}`}
-                  className="w-full sm:w-40 aspect-square object-cover shrink-0"
-                />
+                <div className="relative w-full sm:w-40 aspect-square shrink-0">
+                  <Image
+                    src={latest.cover}
+                    alt={`Stack Rack — ${latest.title}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 160px"
+                  />
+                </div>
                 <div className="flex flex-col justify-center gap-4">
                   <div>
                     <p className="text-[10px] tracking-[0.4em] text-emerald-400 uppercase mb-1">Latest Release</p>
@@ -229,12 +233,13 @@ export default function Music() {
                     rel="noopener noreferrer"
                     className="group overflow-hidden bg-white/3 hover:bg-white/8 border border-white/5 hover:border-[#01ff95]/40 transition-all duration-300"
                   >
-                    <div className="aspect-square overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="aspect-square overflow-hidden relative">
+                      <Image
                         src={release.cover}
                         alt={`Stack Rack — ${release.title} (${release.year}) on ${release.label}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
                     </div>
                     <div className="p-3.5">
@@ -276,12 +281,13 @@ export default function Music() {
               rel="noopener noreferrer"
               className="group overflow-hidden bg-white/3 hover:bg-white/8 border border-white/5 hover:border-blue-600/40 transition-all duration-300"
             >
-              <div className="aspect-square overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="aspect-square overflow-hidden relative">
+                <Image
                   src={release.cover}
                   alt={`Stack Rack — ${release.title} (${release.year}) on ${release.label}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
               <div className="p-3.5">

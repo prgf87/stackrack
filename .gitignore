@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 assets.md
 instructions.md
-
+pageSpeedInsights.md
 
 /assets
 /.claude

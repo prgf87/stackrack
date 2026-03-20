@@ -56,86 +56,114 @@ export default function Bookings() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-                className={inputClass}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-                className={inputClass}
-                required
-              />
+              <div>
+                <label htmlFor="booking-name" className="sr-only">Your Name</label>
+                <input
+                  id="booking-name"
+                  type="text"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  className={inputClass}
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="booking-email" className="sr-only">Your Email</label>
+                <input
+                  id="booking-email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  className={inputClass}
+                  required
+                />
+              </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Event / Festival Name"
-                value={formData.eventName}
-                onChange={(e) =>
-                  setFormData({ ...formData, eventName: e.target.value })
-                }
-                className={inputClass}
-              />
-              <input
-                type="date"
-                value={formData.eventDate}
-                onChange={(e) =>
-                  setFormData({ ...formData, eventDate: e.target.value })
-                }
-                className={`${inputClass} [color-scheme:dark]`}
-              />
+              <div>
+                <label htmlFor="booking-event-name" className="sr-only">Event / Festival Name</label>
+                <input
+                  id="booking-event-name"
+                  type="text"
+                  placeholder="Event / Festival Name"
+                  value={formData.eventName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, eventName: e.target.value })
+                  }
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="booking-date" className="sr-only">Event Date</label>
+                <input
+                  id="booking-date"
+                  type="date"
+                  value={formData.eventDate}
+                  onChange={(e) =>
+                    setFormData({ ...formData, eventDate: e.target.value })
+                  }
+                  className={`${inputClass} [color-scheme:dark]`}
+                />
+              </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="City / Venue"
-                value={formData.location}
-                onChange={(e) =>
-                  setFormData({ ...formData, location: e.target.value })
-                }
-                className={inputClass}
-              />
-              <select
-                value={formData.type}
-                onChange={(e) =>
-                  setFormData({ ...formData, type: e.target.value })
-                }
-                className={`${inputClass} cursor-pointer`}
-              >
-                <option className="bg-[#0a0a0f] text-white" value="DJ Set">
-                  DJ Set
-                </option>
-                <option className="bg-[#0a0a0f] text-white" value="Live Set">
-                  Live Set
-                </option>
-                <option className="bg-[#0a0a0f] text-white" value="Both">
-                  Both
-                </option>
-              </select>
+              <div>
+                <label htmlFor="booking-location" className="sr-only">City / Venue</label>
+                <input
+                  id="booking-location"
+                  type="text"
+                  placeholder="City / Venue"
+                  value={formData.location}
+                  onChange={(e) =>
+                    setFormData({ ...formData, location: e.target.value })
+                  }
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="booking-type" className="sr-only">Performance Type</label>
+                <select
+                  id="booking-type"
+                  value={formData.type}
+                  onChange={(e) =>
+                    setFormData({ ...formData, type: e.target.value })
+                  }
+                  className={`${inputClass} cursor-pointer`}
+                >
+                  <option className="bg-[#0a0a0f] text-white" value="DJ Set">
+                    DJ Set
+                  </option>
+                  <option className="bg-[#0a0a0f] text-white" value="Live Set">
+                    Live Set
+                  </option>
+                  <option className="bg-[#0a0a0f] text-white" value="Both">
+                    Both
+                  </option>
+                </select>
+              </div>
             </div>
 
-            <textarea
-              placeholder="Tell us about your event…"
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-              rows={5}
-              className={`${inputClass} resize-none`}
-            />
+            <div>
+              <label htmlFor="booking-message" className="sr-only">Message</label>
+              <textarea
+                id="booking-message"
+                placeholder="Tell us about your event…"
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+                rows={5}
+                className={`${inputClass} resize-none`}
+              />
+            </div>
 
             {status === "error" && (
               <p className="text-red-400 text-sm">
