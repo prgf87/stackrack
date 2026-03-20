@@ -89,7 +89,9 @@ export default function Connect() {
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="flex gap-0">
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <input
+                id="newsletter-email"
                 type="email"
                 placeholder="your@email.com"
                 value={email}
