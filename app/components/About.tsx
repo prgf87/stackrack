@@ -42,7 +42,7 @@ export default function About() {
                 Tokyo (2023), the stages of Touch Samadhi Festival (North
                 Carolina), Sacred Earth (Missouri) and Maui Waui Festival.
                 Shared stages include Ace Ventura, Laughing Buddha, Symbolic,
-                Mandala, Tron and Burn in Noise at Elemental, Leeds.
+                Mandala, Tron and Burn in Noise.
               </p>
               <p>
                 Recent momentum includes the{" "}
@@ -50,7 +50,7 @@ export default function About() {
                   Random EP
                 </em>{" "}
                 on Cosmic Era reaching{" "}
-                <span className="text-white font-medium">#3 on Beatport</span>,
+                <span className="text-white font-medium">#1 on Beatport</span>,
                 collaborations with Kri Samadhi, Distant Touch & Daksinamurti
                 and Wavelength, and remixes for Rugrats, NaiLik and Sabretooth.
                 A new 9-track album is in progress alongside forthcoming
