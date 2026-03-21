@@ -50,7 +50,7 @@ export default function About() {
                   Random EP
                 </em>{" "}
                 on Cosmic Era reaching{" "}
-                <span className="text-white font-medium">#1 on Beatport</span>,
+                <span className="text-white font-medium">#3 on Beatport</span>,
                 collaborations with Kri Samadhi, Distant Touch & Daksinamurti
                 and Wavelength, and remixes for Rugrats, NaiLik and Sabretooth.
                 A new 9-track album is in progress alongside forthcoming
@@ -60,33 +60,6 @@ export default function About() {
                 <span className="text-blue-400">Alien Devices</span> and{" "}
                 <span className="text-blue-400">Systematic Audio</span>.
               </p>
-            </div>
-
-            <div className="mt-10 flex gap-6">
-              <div>
-                <p className="text-2xl font-display font-bold text-white">
-                  2003
-                </p>
-                <p className="text-xs text-gray-600 tracking-widest uppercase mt-1">
-                  Since
-                </p>
-              </div>
-              <div className="w-px bg-white/10" />
-              <div>
-                <p className="text-2xl font-display font-bold text-white">
-                  20+
-                </p>
-                <p className="text-xs text-gray-600 tracking-widest uppercase mt-1">
-                  Years Active
-                </p>
-              </div>
-              <div className="w-px bg-white/10" />
-              <div>
-                <p className="text-2xl font-display font-bold text-white">#1</p>
-                <p className="text-xs text-gray-600 tracking-widest uppercase mt-1">
-                  Beatport
-                </p>
-              </div>
             </div>
           </div>
 
