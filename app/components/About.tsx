@@ -16,24 +16,48 @@ export default function About() {
 
             <div className="space-y-5 text-gray-400 leading-relaxed text-[15px]">
               <p>
-                Pedro Ferreira has been crafting psychedelic music as Stack Rack
-                since 2003, ignited by the Goa-inspired sounds of Hallucinogen
-                and forged in the underground party scene of the Kentish
-                woodlands.
+                Stack Rack is the alias of Pedro Ferreira — a UK producer and DJ
+                forged in the Kentish woodlands and London&apos;s underground
+                squat party scene. His journey began at 15, cutting his teeth at
+                illegal raves before Hallucinogen&apos;s{" "}
+                <em className="text-emerald-400 not-italic font-medium">
+                  Twisted
+                </em>{" "}
+                and a life-changing psychedelic experience set his course: two
+                decades crafting uncompromising full-on psytrance.
               </p>
               <p>
-                His first live performance was at The Fridge, London in 2008
-                alongside Scorb, RAM, and NRS. His debut album{" "}
+                His debut live performance at The Fridge, London in 2008 —
+                alongside Scorb, RAM and NRS — was followed by his acclaimed
+                album{" "}
                 <em className="text-emerald-400 not-italic font-medium">
                   Planetary Collisions
                 </em>{" "}
-                (2009) was praised for its depth and variety.
+                (2009). Since then his sound has sharpened into something more
+                deliberate: blistering full-on intensity with hypnotic leads and
+                driving basslines that command the floor.
               </p>
               <p>
-                He has since released through Sculpted Sounds and appeared on
-                compilations globally, also producing under aliases{" "}
+                He has taken that sound international — a five-club week in
+                Tokyo (2023), the stages of Touch Samadhi Festival (North
+                Carolina), Sacred Earth (Missouri) and Maui Waui Festival.
+                Shared stages include Ace Ventura, Laughing Buddha, Symbolic,
+                Mandala, Tron and Burn in Noise at Elemental, Leeds.
+              </p>
+              <p>
+                Recent momentum includes the{" "}
+                <em className="text-emerald-400 not-italic font-medium">
+                  Random EP
+                </em>{" "}
+                on Cosmic Era reaching{" "}
+                <span className="text-white font-medium">#3 on Beatport</span>,
+                collaborations with Kri Samadhi, Distant Touch & Daksinamurti
+                and Wavelength, and remixes for Rugrats, NaiLik and Sabretooth.
+                A new 9-track album is in progress alongside forthcoming
+                releases on Free-Spirit Records and Phonix Records. He also
+                produces under aliases{" "}
                 <span className="text-blue-400">Anthropod</span>,{" "}
-                <span className="text-blue-400">Alien Devices</span>, and{" "}
+                <span className="text-blue-400">Alien Devices</span> and{" "}
                 <span className="text-blue-400">Systematic Audio</span>.
               </p>
             </div>
@@ -58,11 +82,9 @@ export default function About() {
               </div>
               <div className="w-px bg-white/10" />
               <div>
-                <p className="text-2xl font-display font-bold text-white">
-                  20+
-                </p>
+                <p className="text-2xl font-display font-bold text-white">#1</p>
                 <p className="text-xs text-gray-600 tracking-widest uppercase mt-1">
-                  Releases
+                  Beatport
                 </p>
               </div>
             </div>

@@ -30,7 +30,7 @@ export async function sendNewsletterSignup(email: string) {
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#0a0a0f;color:#ccc;padding:32px;border:1px solid #222">
           <h2 style="color:#00ff88;font-size:20px;margin:0 0 16px">You're on the list.</h2>
           <p style="font-size:14px;line-height:1.6;color:#aaa;margin:0 0 16px">
-            Thanks for subscribing to the Stack Rack mailing list. You'll be the first to hear about new releases, mixes, and upcoming shows.
+            Thanks for subscribing to the Stack Rack mailing list. You'll be the first to hear about new releases, mixes and upcoming shows.
           </p>
           <p style="font-size:13px;color:#666;margin:24px 0 0;border-top:1px solid #1a1a1a;padding-top:16px">
             Stack Rack · <a href="mailto:stackrack@live.com" style="color:#00ff88">stackrack@live.com</a>

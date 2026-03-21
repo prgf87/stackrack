@@ -8,7 +8,7 @@ export default function Mixes() {
           Mixes & Radio
         </p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
-          Hear It Live
+          Lost in the Cloud
         </h2>
 
         {/* Live photo strip */}
@@ -42,7 +42,7 @@ export default function Mixes() {
             height="166"
             scrolling="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/stackrack/are-you-out-there-remix&color=%2300ff88&auto_play=false&visual=true"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1296307240&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
             className="border-0 block"
             title="Stack Rack on SoundCloud"
           />

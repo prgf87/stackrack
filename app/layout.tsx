@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack is Pedro Ferreira — a UK-based full-on psychedelic trance producer and DJ active since 2003. Available for festival headline slots, club nights, and international bookings.",
+    "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — a UK-based full-on psychedelic trance producer and DJ active since 2003. Available for festival headline slots, club nights, and international bookings.",
+      "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
     url: SITE_URL,
     siteName: "Stack Rack",
     images: [
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — a UK-based full-on psychedelic trance producer and DJ active since 2003. Available for festival headline slots, club nights, and international bookings.",
+      "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
     images: [OG_IMAGE],
     creator: "@stackrack",
   },
@@ -91,7 +91,7 @@ const musicGroupSchema = {
   name: "Stack Rack",
   alternateName: "Pedro Ferreira",
   description:
-    "Full-on psychedelic trance producer and DJ from the UK, active since 2003. Releases on Sculpted Sounds; debut album Planetary Collisions (2009).",
+    "Full-on psychedelic trance producer and DJ from the UK, active since 2003. #3 Beatport, Tokyo tour, US festivals. Releases on Sculpted Sounds, Cosmic Era, MMD Records.",
   genre: ["Psychedelic trance", "Full-on psytrance", "Goa trance"],
   foundingDate: "2003",
   foundingLocation: {
@@ -132,7 +132,7 @@ const personSchema = {
     "Systematic Audio",
   ],
   description:
-    "UK-based full-on psychedelic trance artist, producer, and DJ known as Stack Rack. Active since 2003, releases on Sculpted Sounds.",
+    "UK-based full-on psychedelic trance artist, producer and DJ known as Stack Rack. Active since 2003. #3 Beatport, international festival and club bookings.",
   nationality: "British",
   url: SITE_URL,
   sameAs: [SITE_URL],
