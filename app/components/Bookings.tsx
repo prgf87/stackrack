@@ -37,8 +37,8 @@ export default function Bookings() {
           Book Stack Rack
         </h2>
         <p className="text-gray-500 mb-12 text-sm leading-relaxed">
-          Available for festival headline slots, club nights and international
-          bookings.
+          Headline slots, club nights and international bookings — with a
+          proven track record across Japan, the US and the UK.
         </p>
 
         {status === "success" ? (
