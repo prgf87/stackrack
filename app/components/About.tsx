@@ -47,9 +47,9 @@ export default function About() {
               <p>
                 Recent momentum includes the{" "}
                 <em className="text-emerald-400 not-italic font-medium">
-                  Random EP
+                  Random - Cosmic Era EP
                 </em>{" "}
-                on Cosmic Era reaching{" "}
+                on Sculpted Sounds reaching{" "}
                 <span className="text-white font-medium">#3 on Beatport</span>,
                 collaborations with Kri Samadhi, Distant Touch & Daksinamurti
                 and Wavelength, and remixes for Rugrats, NaiLik and Sabretooth.
