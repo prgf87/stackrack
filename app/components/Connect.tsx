@@ -70,7 +70,7 @@ export default function Connect() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-5 py-2.5 border border-white/12 text-gray-500 text-[11px] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
+              className={`px-5 py-2.5 border border-white/12 text-gray-400 text-[11px] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
             >
               {s.name}
             </a>
@@ -79,7 +79,7 @@ export default function Connect() {
 
         {/* Newsletter */}
         <div className="max-w-md mx-auto">
-          <p className="text-gray-600 text-xs tracking-wide mb-5 uppercase">
+          <p className="text-gray-400 text-xs tracking-wide mb-5 uppercase">
             Stay informed — releases, shows, no spam
           </p>
 

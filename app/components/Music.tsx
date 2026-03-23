@@ -158,7 +158,7 @@ export default function Music() {
               className={`px-5 py-3 text-[11px] tracking-[0.2em] uppercase transition-all duration-200 ${
                 activeTab === tab.id
                   ? 'bg-blue-700 text-white'
-                  : 'text-gray-500 hover:text-gray-200 hover:bg-white/5'
+                  : 'text-gray-400 hover:text-gray-200 hover:bg-white/5'
               }`}
             >
               {tab.label}
@@ -244,7 +244,7 @@ export default function Music() {
                     </div>
                     <div className="p-3.5">
                       <p className="text-white text-xs font-semibold leading-snug">{release.title}</p>
-                      <p className="text-gray-600 text-[11px] mt-1">
+                      <p className="text-gray-400 text-[11px] mt-1">
                         {release.label} · {release.year}
                       </p>
                     </div>
@@ -267,7 +267,7 @@ export default function Music() {
 
         {/* Divider */}
         <div className="mb-10">
-          <p className="text-xs tracking-[0.4em] text-gray-600 uppercase mb-6">All Releases</p>
+          <p className="text-xs tracking-[0.4em] text-gray-400 uppercase mb-6">All Releases</p>
           <div className="w-12 h-px bg-blue-600/60" />
         </div>
 
@@ -292,7 +292,7 @@ export default function Music() {
               </div>
               <div className="p-3.5">
                 <p className="text-white text-xs font-semibold leading-snug">{release.title}</p>
-                <p className="text-gray-600 text-[11px] mt-1">
+                <p className="text-gray-400 text-[11px] mt-1">
                   {release.label} · {release.year}
                 </p>
               </div>

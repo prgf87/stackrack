@@ -26,7 +26,7 @@ export default function Footer() {
                 className="h-7 w-auto opacity-60 hover:opacity-90 transition-opacity"
               />
             </a>
-            <p className="text-gray-700 text-xs mt-2">Pedro Ferreira · UK · Since 2003</p>
+            <p className="text-gray-400 text-xs mt-2">Pedro Ferreira · UK · Since 2003</p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
@@ -34,7 +34,7 @@ export default function Footer() {
               <a
                 key={link}
                 href={`#${link}`}
-                className="text-gray-700 hover:text-emerald-400 text-[11px] tracking-[0.2em] uppercase transition-colors duration-200"
+                className="text-gray-400 hover:text-emerald-400 text-[11px] tracking-[0.2em] uppercase transition-colors duration-200"
               >
                 {link}
               </a>
@@ -43,10 +43,10 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 border-t border-white/4 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-gray-700 text-[11px] tracking-wide">
+          <p className="text-gray-400 text-[11px] tracking-wide">
             © Stack Rack / Pedro Ferreira. All rights reserved.
           </p>
-          <p className="text-gray-800 text-[11px]">Full-On Psychedelic Trance</p>
+          <p className="text-gray-500 text-[11px]">Full-On Psychedelic Trance</p>
         </div>
       </div>
     </footer>
