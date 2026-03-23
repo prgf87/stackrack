@@ -45,6 +45,7 @@ export default function Mixes() {
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1296307240&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
             className="border-0 block"
             title="Stack Rack on SoundCloud"
+            loading="lazy"
           />
         </div>
 
@@ -53,7 +54,7 @@ export default function Mixes() {
             <p className="text-gray-400 text-sm">
               More mixes and free tracks available on SoundCloud.
             </p>
-            <p className="text-gray-600 text-xs mt-1">
+            <p className="text-gray-400 text-xs mt-1">
               EPK and tech rider available on request.
             </p>
           </div>
