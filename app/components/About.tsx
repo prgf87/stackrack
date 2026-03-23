@@ -11,7 +11,7 @@ export default function About() {
               About
             </p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
-              Pedro Ferreira
+              Stack Rack
             </h2>
 
             <div className="space-y-5 text-gray-400 leading-relaxed text-[15px]">
