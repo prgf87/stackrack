@@ -36,7 +36,7 @@ export default function Bookings() {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide">
           Book Stack Rack
         </h2>
-        <p className="text-gray-500 mb-12 text-sm leading-relaxed">
+        <p className="text-gray-400 mb-12 text-sm leading-relaxed">
           Headline slots, club nights and international bookings — with a
           proven track record across Japan, the US and the UK.
         </p>
@@ -187,23 +187,23 @@ export default function Bookings() {
 
         <div className="mt-12 pt-8 border-t border-white/8 grid sm:grid-cols-2 gap-4 text-center sm:text-left">
           <div>
-            <p className="text-gray-600 text-xs tracking-widest uppercase mb-1">
+            <p className="text-gray-400 text-xs tracking-widest uppercase mb-1">
               Email
             </p>
             <a
               href="mailto:stackrack@live.com"
-              className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm"
+              className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm underline underline-offset-2"
             >
               stackrack@live.com
             </a>
           </div>
           <div>
-            <p className="text-gray-600 text-xs tracking-widest uppercase mb-1">
+            <p className="text-gray-400 text-xs tracking-widest uppercase mb-1">
               Phone
             </p>
             <a
               href="tel:+447472097891"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-400 hover:text-white transition-colors text-sm underline underline-offset-2"
             >
               +44 7472 097891
             </a>
