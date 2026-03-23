@@ -258,7 +258,7 @@ export default function Hero() {
           />
         </div>
 
-        <p className="text-gray-500 text-sm md:text-base tracking-[0.35em] uppercase mb-12">
+        <p className="text-gray-400 text-sm md:text-base tracking-[0.35em] uppercase mb-12">
           Veteran UK Psytrance Producer & DJ · 20 Years Underground
         </p>
 
