@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-8 bg-[#0a0a0f]">
+    <section id="about" className="py-16 md:py-20 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div>
-            <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">
+            <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
               About
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6 tracking-wide">
               Stack Rack
             </h2>
 
@@ -56,9 +56,9 @@ export default function About() {
                 A new 9-track album is in progress alongside forthcoming
                 releases on Free-Spirit Records and Phonix Records. He also
                 produces under aliases{" "}
-                <span className="text-blue-400">Anthropod</span>,{" "}
-                <span className="text-blue-400">Alien Devices</span> and{" "}
-                <span className="text-blue-400">Systematic Audio</span>.
+                <span className="text-emerald-400">Anthropod</span>,{" "}
+                <span className="text-emerald-400">Alien Devices</span> and{" "}
+                <span className="text-emerald-400">Systematic Audio</span>.
               </p>
             </div>
           </div>
