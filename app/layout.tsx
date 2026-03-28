@@ -199,7 +199,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`scroll-smooth ${orbitron.variable} ${spaceGrotesk.variable}`}
     >
       <head>
