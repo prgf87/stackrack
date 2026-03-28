@@ -36,7 +36,7 @@ const eventSchemas = DATES.map((show) => ({
 
 export default function LiveDates() {
   return (
-    <section id="dates" className="py-24 md:py-32 px-6 md:px-8 bg-[#0d0d18]">
+    <section id="dates" className="py-16 md:py-20 px-6 md:px-8 bg-[#0d0d18]">
       {eventSchemas.map((schema) => (
         <script
           key={schema.name}
@@ -46,10 +46,10 @@ export default function LiveDates() {
       ))}
 
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Shows
         </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-12 tracking-wide">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
           Live Dates
         </h2>
 
@@ -86,7 +86,7 @@ export default function LiveDates() {
                   href={show.ticketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] border border-blue-600/50 text-blue-400 hover:bg-blue-700 hover:text-white px-4 py-2 tracking-[0.2em] uppercase transition-all duration-200 w-fit"
+                  className="text-[11px] border border-emerald-600/50 text-emerald-400 hover:bg-emerald-700 hover:text-white px-4 py-2 tracking-[0.2em] uppercase transition-all duration-200 w-fit"
                 >
                   Tickets
                 </a>

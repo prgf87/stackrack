@@ -1,21 +1,29 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-const QUICK_LINKS = ['home', 'about', 'music', 'mixes', 'dates', 'bookings', 'connect'];
+const QUICK_LINKS = [
+  "home",
+  "about",
+  "music",
+  "mixes",
+  "dates",
+  "bookings",
+  "connect",
+];
 
 export default function Footer() {
   return (
     <footer className="bg-[#050508] pt-12 pb-8 px-6 md:px-8">
       {/* Psychedelic gradient divider */}
       <div
-        className="w-full h-px mb-12"
+        className="w-full h-px mb-8"
         style={{
           background:
-            'linear-gradient(90deg, transparent 0%, #1d4ed8 20%, #3b82f6 40%, #00ff88 60%, #1d4ed8 80%, transparent 100%)',
+            "linear-gradient(90deg, transparent 0%, #1d4ed8 20%, #3b82f6 40%, #00ff88 60%, #1d4ed8 80%, transparent 100%)",
         }}
       />
 
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
           <div className="text-center md:text-left">
             <a href="#home">
               <Image
@@ -26,7 +34,9 @@ export default function Footer() {
                 className="h-7 w-auto opacity-60 hover:opacity-90 transition-opacity"
               />
             </a>
-            <p className="text-gray-400 text-xs mt-2">Pedro Ferreira · UK · Since 2003</p>
+            <p className="text-gray-400 text-xs mt-2">
+              Stack Rack · UK · Since 2003
+            </p>
           </div>
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2 justify-center">
@@ -44,9 +54,11 @@ export default function Footer() {
 
         <div className="pt-6 border-t border-white/4 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-400 text-[11px] tracking-wide">
-            © Stack Rack / Pedro Ferreira. All rights reserved.
+            © Stack Rack - All rights reserved.
           </p>
-          <p className="text-gray-500 text-[11px]">Full-On Psychedelic Trance</p>
+          <p className="text-gray-500 text-[11px]">
+            Full-On Psychedelic Trance
+          </p>
         </div>
       </div>
     </footer>

@@ -2,17 +2,17 @@ import Image from "next/image";
 
 export default function Mixes() {
   return (
-    <section id="mixes" className="py-24 md:py-32 px-6 md:px-8 bg-[#0a0a0f]">
+    <section id="mixes" className="py-16 md:py-20 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-5">
+        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Mixes & Radio
         </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6 tracking-wide">
           Lost in the Cloud
         </h2>
 
         {/* Live photo strip */}
-        <div className="grid grid-cols-2 gap-2 mb-10">
+        <div className="grid grid-cols-2 gap-2 mb-6">
           <div className="relative aspect-video overflow-hidden">
             <Image
               src="/live-dj-1.jpeg"
@@ -36,7 +36,7 @@ export default function Mixes() {
         </div>
 
         {/* SoundCloud embed */}
-        <div className="mb-10 border border-white/5">
+        <div className="mb-6 border border-white/5">
           <iframe
             width="100%"
             height="166"
@@ -69,7 +69,7 @@ export default function Mixes() {
             </a>
             <a
               href="#bookings"
-              className="px-5 py-2.5 border border-blue-600/50 text-blue-400 hover:bg-blue-700 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
+              className="px-5 py-2.5 border border-emerald-600/50 text-emerald-400 hover:bg-emerald-700 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
             >
               Request EPK
             </a>
