@@ -15,13 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE_URL = "https://stackrack.co.uk";
-const OG_IMAGE = "https://f4.bcbits.com/img/0041697518_10.jpg";
+const OG_IMAGE = `${SITE_URL}/profile-picture.JPG`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
+    "Stack Rack is Pedro Ferreira — Portuguese veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
@@ -53,6 +53,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo-icon.png",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: SITE_URL,
   },
@@ -67,7 +71,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Stack Rack — Pedro Ferreira, UK full-on psychedelic trance artist and DJ",
+        alt: "Stack Rack (Pedro Ferreira) — UK full-on psychedelic trance artist and DJ",
       },
     ],
     type: "website",
