@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack is Pedro Ferreira — Portuguese veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
+    "Stack Rack is Pedro Ferreira — veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
