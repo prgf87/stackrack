@@ -50,6 +50,15 @@ export default function About() {
             becoming his primary creative instrument.
           </p>
 
+          <blockquote className="mt-8 border-l-2 border-emerald-400 pl-5 text-gray-500 italic leading-relaxed text-sm">
+            &ldquo;I started making music after a really amazing experience: my
+            first full sunrise at a party and as I woke up from a brief nap, my
+            back against a tree and the sound system in front of me&hellip; I
+            saw the sound waves emanating from the speakers and flowing through
+            those beautiful woods. I haven&apos;t stopped since that incredible
+            experience.&rdquo;
+          </blockquote>
+
           <p>
             His debut live performance came in 2008 at The Fridge, London,
             alongside Last Possible Solution Records legends Scorb, RAM and NRS.
@@ -104,15 +113,6 @@ export default function About() {
             inspired psytrance).
           </p>
         </div>
-
-        <blockquote className="mt-8 border-l-2 border-emerald-400 pl-5 text-gray-500 italic leading-relaxed text-sm">
-          &ldquo;I started making music after a really amazing experience: my
-          first full sunrise at a party and as I woke up from a brief nap, my
-          back against a tree and the sound system in front of me&hellip; I saw
-          the sound waves emanating from the speakers and flowing through those
-          beautiful woods. I haven&apos;t stopped since that incredible
-          experience.&rdquo;
-        </blockquote>
 
         <div className="clear-both" />
       </div>
