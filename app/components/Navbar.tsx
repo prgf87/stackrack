@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2 text-gray-400 hover:text-white"
+          className="md:hidden flex flex-col gap-1.5 p-2 text-gray-400 hover:text-white cursor-pointer"
           aria-label="Toggle menu"
         >
           <span

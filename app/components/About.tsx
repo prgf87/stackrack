@@ -28,12 +28,12 @@ export default function About() {
 
         <div className="space-y-5 text-gray-400 leading-relaxed text-base">
           <p>
-            Stack Rack is the alias of Pedro Ferreira — a distinguished
-            UK-based Portuguese psychedelic trance producer and DJ whose
-            20-plus year career has made him a respected figure in the global
-            full-on and twilight psytrance scene. His signature sound combines
-            powerful driving basslines, intricate percussion, soaring arpeggios
-            and aggressive acid and FM lines — a deliberate full-on assault at
+            Stack Rack is the alias of Pedro Ferreira — a distinguished UK-based
+            Portuguese psychedelic trance producer and DJ whose 20-plus year
+            career has made him a respected figure in the global full-on and
+            twilight psytrance scene. His signature sound combines powerful
+            driving basslines, intricate percussion, soaring arpeggios and
+            aggressive acid and FM lines — a deliberate full-on assault at
             146–148 BPM liberally charged with twilight modulations and
             Goa-inspired euphoric moments.
           </p>
@@ -77,7 +77,7 @@ export default function About() {
             <span className="text-white font-medium">
               #3 on the Beatport Psytrance Release Charts
             </span>
-            , while his{" "}
+            , when Random&apos;s{" "}
             <em className="text-emerald-400 not-italic font-medium">
               Cosmic Era EP
             </em>{" "}
@@ -87,22 +87,21 @@ export default function About() {
           <p>
             Stack Rack has performed across three continents — a five-club week
             in Tokyo (2023), Touch Samadhi Festival in North Carolina (2019),
-            Sacred Earth in Missouri (2022) and Maui Waui Festival. He has
-            shared stages with Ace Ventura, Laughing Buddha, Scorb, Symbolic,
-            Mandala, Tron, Dirty Saffi and Illegal Machines, and headlined
-            countless events across the UK circuit.
+            Sacred Earth in Missouri (2022) and Maui Waui Festival, UK. He has
+            shared stages with Ace Ventura, Burn in Noise, Laughing Buddha,
+            Scorb, Symbolic, Mandala, Tron, Dirty Saffi, Illegal Machines and
+            headlined countless events across the UK circuit.
           </p>
 
           <p>
             A new 9-track album is in progress alongside forthcoming releases on
             Free-Spirit Records, Phonix Records and MMD Records. Beyond Stack
             Rack, Pedro also produces as{" "}
-            <span className="text-emerald-400">Anthropod</span>{" "}
-            (experimental psytrance),{" "}
-            <span className="text-emerald-400">Alien Devices</span>{" "}
-            (collaborative) and{" "}
-            <span className="text-emerald-400">Systematic Audio</span>{" "}
-            (technical sound explorations).
+            <span className="text-emerald-400">Anthropod</span> (experimental
+            psytrance), <span className="text-emerald-400">Alien Devices</span>{" "}
+            (progresive full-on) and{" "}
+            <span className="text-emerald-400">Systematic Audio</span> (techno
+            inspired psytrance).
           </p>
         </div>
 
