@@ -4,10 +4,9 @@ import { useState, useTransition } from "react";
 import { sendBookingEnquiry } from "../actions/sendBooking";
 
 const STATS = [
-  { value: "#3", label: "Beatport Chart" },
   { value: "20+", label: "Years Active" },
   { value: "Japan · US · UK", label: "International" },
-  { value: "Headline / Festival", label: "Available For" },
+  { value: "Headline / Club / Festival", label: "Available For" },
 ];
 
 export default function Bookings() {
@@ -45,14 +44,28 @@ export default function Bookings() {
         <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
           Book Stack Rack
         </h2>
-        <p className="text-gray-400 mb-4 text-base leading-relaxed">
-          Headline slots, club nights and international bookings — with a proven
-          track record across Japan, the US and the UK.
+        <p className="text-gray-400 mb-8 text-base leading-relaxed">
+          Headline slots, club nights and international bookings available for
+          Q3 2026 and beyond. Fill out the form below with as much info as
+          possible about your event, and we&apos;ll get back to you within 48-72
+          hours.
         </p>
 
-        <p className="flex items-center gap-2 text-sm text-emerald-400/80 mb-6">
+        <p className="text-gray-400 text-base mb-8 tracking-wide">
+          PLEASE NOTE: Replies will only include the full EPK and technical
+          rider upon request.
+        </p>
+        <p className="text-gray-400 mb-8 text-base tracking-wide">
+          For urgent enquiries, please email{" "}
+          <a href="mailto:stackrack@live.com" className="underline">
+            stackrack@live.com
+          </a>
+          .
+        </p>
+
+        <p className="flex items-center gap-2 text-base text-emerald-400/80 mb-6">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-          Currently taking bookings for Q4 2026 and beyond
+          Currently taking bookings for Q3 2026 and beyond
         </p>
 
         {/* Trust stats */}
@@ -60,16 +73,12 @@ export default function Bookings() {
           {STATS.map((s) => (
             <div key={s.label}>
               <p className="text-white font-semibold text-base">{s.value}</p>
-              <p className="text-gray-600 text-xs tracking-[0.3em] uppercase mt-0.5">
+              <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-0.5">
                 {s.label}
               </p>
             </div>
           ))}
         </div>
-
-        <p className="text-gray-600 text-sm mb-8 tracking-wide">
-          Reply includes full EPK and technical rider.
-        </p>
 
         {status === "success" ? (
           <div className="py-16 text-center border border-white/8">
@@ -77,11 +86,31 @@ export default function Bookings() {
               Enquiry Sent
             </p>
             <p className="text-white text-xl mb-2">
-              Thanks — we&apos;ll be in touch.
+              Thank you for reaching out <br /> We&apos;ll be in touch in the
+              next 48-72 hours.
             </p>
-            <p className="text-gray-600 text-base">
+            <p className="text-gray-400 text-base my-8">
               A confirmation has been sent to {formData.email}
             </p>
+            <button
+              onClick={() => {
+                setStatus("idle");
+                setFormData({
+                  name: "",
+                  email: "",
+                  eventName: "",
+                  eventDate: "",
+                  location: "",
+                  type: "DJ Set",
+                  budget: "",
+                  message: "",
+                  honeypot: "",
+                });
+              }}
+              className="text-xs text-gray-400 hover:text-emerald-400 tracking-[0.2em] uppercase transition-colors duration-200 underline underline-offset-4 cursor-pointer"
+            >
+              Submit another enquiry
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -222,10 +251,7 @@ export default function Bookings() {
                 <option className="bg-[#0a0a0f] text-white" value="">
                   Approximate Budget
                 </option>
-                <option
-                  className="bg-[#0a0a0f] text-white"
-                  value="Under £500"
-                >
+                <option className="bg-[#0a0a0f] text-white" value="Under £500">
                   Under £500
                 </option>
                 <option
@@ -243,10 +269,7 @@ export default function Bookings() {
                 <option className="bg-[#0a0a0f] text-white" value="£2,000+">
                   £2,000+
                 </option>
-                <option
-                  className="bg-[#0a0a0f] text-white"
-                  value="To discuss"
-                >
+                <option className="bg-[#0a0a0f] text-white" value="To discuss">
                   To discuss
                 </option>
               </select>
@@ -281,7 +304,7 @@ export default function Bookings() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-base uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
+              className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-base uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
             >
               {isPending ? "Sending…" : "Send Booking Enquiry"}
             </button>

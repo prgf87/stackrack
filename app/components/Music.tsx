@@ -169,7 +169,7 @@ export default function Music() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-200 ${
+              className={`px-5 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-200 cursor-pointer ${
                 activeTab === tab.id
                   ? "bg-emerald-700 text-white"
                   : "text-gray-400 hover:text-gray-200 hover:bg-white/5"

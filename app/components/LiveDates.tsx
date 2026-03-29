@@ -1,6 +1,14 @@
 const DATES = [
   // Replace these with real dates when available
   {
+    date: "Sat 08-10 May 2026",
+    iso: "2026-05-08",
+    event: "Private Event",
+    city: "Algarve",
+    country: "Portugal",
+    ticketUrl: "#",
+  },
+  {
     date: "Sat 25-27 September 2026",
     iso: "2026-09-25",
     event: "TBC",
@@ -11,7 +19,7 @@ const DATES = [
   {
     date: "January 2027",
     iso: "2027-01-01",
-    event: "Elemental Psytrance",
+    event: "TBC",
     city: "Leeds",
     country: "UK",
     ticketUrl: "#",
@@ -35,9 +43,16 @@ const eventSchemas = DATES.map((show) => ({
   performer: {
     "@type": "MusicGroup",
     name: "Stack Rack",
-    url: "https://stackrack.com",
+    url: "https://stackrack.co.uk",
   },
-  url: show.ticketUrl !== "#" ? show.ticketUrl : "https://stackrack.com/#dates",
+  ...(show.ticketUrl !== "#" && {
+    url: show.ticketUrl,
+    offers: {
+      "@type": "Offer",
+      url: show.ticketUrl,
+      availability: "https://schema.org/InStock",
+    },
+  }),
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
 }));
@@ -45,9 +60,9 @@ const eventSchemas = DATES.map((show) => ({
 export default function LiveDates() {
   return (
     <section id="dates" className="py-16 md:py-20 px-6 md:px-8 bg-[#0d0d18]">
-      {eventSchemas.map((schema) => (
+      {eventSchemas.map((schema, i) => (
         <script
-          key={schema.name}
+          key={i}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />

@@ -60,13 +60,14 @@ export default function Connect() {
     e.preventDefault();
     startTransition(async () => {
       const result = await sendNewsletterSignup(email);
+      if (result.success) setEmail("");
       setStatus(result.success ? "success" : "error");
     });
   };
 
   return (
     <section id="connect" className="py-16 md:py-20 px-6 md:px-8 bg-[#0d0d18]">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center">
         <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Follow the Signal
         </p>
@@ -82,7 +83,7 @@ export default function Connect() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-5 py-2.5 border border-white/12 text-gray-400 text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
+              className={`px-5 py-2.5 border border-white/12 text-gray-400 text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
             >
               {s.name}
             </a>
@@ -116,7 +117,7 @@ export default function Connect() {
               <button
                 type="submit"
                 disabled={isPending}
-                className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs tracking-[0.2em] uppercase transition-all duration-300 shrink-0"
+                className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed text-white text-xs tracking-[0.2em] uppercase transition-all duration-300 shrink-0"
               >
                 {isPending ? "…" : "Subscribe"}
               </button>
