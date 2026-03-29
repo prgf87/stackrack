@@ -156,10 +156,10 @@ export default function Music() {
   return (
     <section id="music" className="py-16 md:py-20 px-6 md:px-8 bg-[#0d0d18]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
+        <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Discography
         </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-8 tracking-wide">
           The Music
         </h2>
 
@@ -169,7 +169,7 @@ export default function Music() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-3 text-[11px] tracking-[0.2em] uppercase transition-all duration-200 ${
+              className={`px-5 py-3 text-xs tracking-[0.2em] uppercase transition-all duration-200 ${
                 activeTab === tab.id
                   ? "bg-emerald-700 text-white"
                   : "text-gray-400 hover:text-gray-200 hover:bg-white/5"
@@ -198,13 +198,13 @@ export default function Music() {
                   </div>
                   <div className="flex flex-col justify-center gap-4">
                     <div>
-                      <p className="text-[10px] tracking-[0.4em] text-emerald-400 uppercase mb-1">
+                      <p className="text-xs tracking-[0.4em] text-emerald-400 uppercase mb-1">
                         Latest Release
                       </p>
-                      <p className="text-white text-xl font-display font-bold tracking-wide">
+                      <p className="text-white text-2xl font-display font-bold tracking-wide">
                         {latest.title}
                       </p>
-                      <p className="text-gray-500 text-xs mt-1">
+                      <p className="text-gray-500 text-sm mt-1">
                         {latest.label} · {latest.year}
                       </p>
                     </div>
@@ -213,7 +213,7 @@ export default function Music() {
                         href={latest.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-2.5 bg-[#01ff95] hover:bg-[#00e085] text-black font-bold tracking-[0.2em] text-xs uppercase transition-all duration-300"
+                        className="px-6 py-2.5 bg-[#01ff95] hover:bg-[#00e085] text-black font-bold tracking-[0.2em] text-sm uppercase transition-all duration-300"
                       >
                         Buy on Beatport
                       </a>
@@ -221,7 +221,7 @@ export default function Music() {
                         href="https://stackrack.bandcamp.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-2.5 border border-white/20 hover:border-emerald-500/60 text-gray-300 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-300"
+                        className="px-6 py-2.5 border border-white/20 hover:border-emerald-500/60 text-gray-300 hover:text-white text-sm tracking-[0.2em] uppercase transition-all duration-300"
                       >
                         Bandcamp
                       </a>
@@ -264,10 +264,10 @@ export default function Music() {
                       />
                     </div>
                     <div className="p-3.5">
-                      <p className="text-white text-xs font-semibold leading-snug">
+                      <p className="text-white text-sm font-semibold leading-snug">
                         {release.title}
                       </p>
-                      <p className="text-gray-400 text-[11px] mt-1">
+                      <p className="text-gray-400 text-xs mt-1">
                         {release.label} · {release.year}
                       </p>
                     </div>
@@ -279,7 +279,7 @@ export default function Music() {
                   href="https://www.beatport.com/artist/stack-rack/540654"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-10 py-4 bg-[#01ff95] hover:bg-[#00e085] text-black font-bold tracking-[0.2em] text-xs uppercase transition-all duration-300"
+                  className="px-10 py-4 bg-[#01ff95] hover:bg-[#00e085] text-black font-bold tracking-[0.2em] text-sm uppercase transition-all duration-300"
                 >
                   View All on Beatport
                 </a>
@@ -290,7 +290,7 @@ export default function Music() {
 
         {/* Divider */}
         <div className="mb-10">
-          <p className="text-xs tracking-[0.4em] text-gray-400 uppercase mb-6">
+          <p className="text-sm tracking-[0.4em] text-gray-400 uppercase mb-6">
             All Releases
           </p>
           <div className="w-12 h-px bg-emerald-600/60" />
@@ -316,10 +316,10 @@ export default function Music() {
                 />
               </div>
               <div className="p-3.5">
-                <p className="text-white text-xs font-semibold leading-snug">
+                <p className="text-white text-sm font-semibold leading-snug">
                   {release.title}
                 </p>
-                <p className="text-gray-400 text-[11px] mt-1">
+                <p className="text-gray-400 text-xs mt-1">
                   {release.label} · {release.year}
                 </p>
               </div>
