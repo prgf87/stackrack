@@ -3,6 +3,13 @@
 import { useState, useTransition } from "react";
 import { sendBookingEnquiry } from "../actions/sendBooking";
 
+const STATS = [
+  { value: "#3", label: "Beatport Chart" },
+  { value: "20+", label: "Years Active" },
+  { value: "Japan · US · UK", label: "International" },
+  { value: "Headline / Festival", label: "Available For" },
+];
+
 export default function Bookings() {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,7 +18,9 @@ export default function Bookings() {
     eventDate: "",
     location: "",
     type: "DJ Set",
+    budget: "",
     message: "",
+    honeypot: "",
   });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isPending, startTransition] = useTransition();
@@ -25,36 +34,71 @@ export default function Bookings() {
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-emerald-600/80 transition-colors duration-200";
+    "w-full bg-white/5 border border-white/10 text-white placeholder-gray-700 px-4 py-3 text-base focus:outline-none focus:border-emerald-600/80 transition-colors duration-200";
 
   return (
     <section id="bookings" className="py-16 md:py-20 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-3xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
+        <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Get in Touch
         </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3 tracking-wide">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
           Book Stack Rack
         </h2>
-        <p className="text-gray-400 mb-8 text-sm leading-relaxed">
+        <p className="text-gray-400 mb-4 text-base leading-relaxed">
           Headline slots, club nights and international bookings — with a proven
           track record across Japan, the US and the UK.
         </p>
 
+        <p className="flex items-center gap-2 text-sm text-emerald-400/80 mb-6">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          Currently taking bookings for Q4 2026 and beyond
+        </p>
+
+        {/* Trust stats */}
+        <div className="flex flex-wrap gap-x-8 gap-y-4 py-5 mb-6 border-t border-b border-white/8">
+          {STATS.map((s) => (
+            <div key={s.label}>
+              <p className="text-white font-semibold text-base">{s.value}</p>
+              <p className="text-gray-600 text-xs tracking-[0.3em] uppercase mt-0.5">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-gray-600 text-sm mb-8 tracking-wide">
+          Reply includes full EPK and technical rider.
+        </p>
+
         {status === "success" ? (
           <div className="py-16 text-center border border-white/8">
-            <p className="text-emerald-400 text-xs tracking-[0.5em] uppercase mb-3">
+            <p className="text-emerald-400 text-sm tracking-[0.5em] uppercase mb-3">
               Enquiry Sent
             </p>
-            <p className="text-white text-lg mb-2">
+            <p className="text-white text-xl mb-2">
               Thanks — we&apos;ll be in touch.
             </p>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-base">
               A confirmation has been sent to {formData.email}
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Honeypot — hidden from real users, traps bots */}
+            <div aria-hidden="true" style={{ display: "none" }}>
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.honeypot}
+                onChange={(e) =>
+                  setFormData({ ...formData, honeypot: e.target.value })
+                }
+              />
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="booking-name" className="sr-only">
@@ -164,6 +208,51 @@ export default function Bookings() {
             </div>
 
             <div>
+              <label htmlFor="booking-budget" className="sr-only">
+                Approximate Budget
+              </label>
+              <select
+                id="booking-budget"
+                value={formData.budget}
+                onChange={(e) =>
+                  setFormData({ ...formData, budget: e.target.value })
+                }
+                className={`${inputClass} cursor-pointer`}
+              >
+                <option className="bg-[#0a0a0f] text-white" value="">
+                  Approximate Budget
+                </option>
+                <option
+                  className="bg-[#0a0a0f] text-white"
+                  value="Under £500"
+                >
+                  Under £500
+                </option>
+                <option
+                  className="bg-[#0a0a0f] text-white"
+                  value="£500 – £1,000"
+                >
+                  £500 – £1,000
+                </option>
+                <option
+                  className="bg-[#0a0a0f] text-white"
+                  value="£1,000 – £2,000"
+                >
+                  £1,000 – £2,000
+                </option>
+                <option className="bg-[#0a0a0f] text-white" value="£2,000+">
+                  £2,000+
+                </option>
+                <option
+                  className="bg-[#0a0a0f] text-white"
+                  value="To discuss"
+                >
+                  To discuss
+                </option>
+              </select>
+            </div>
+
+            <div>
               <label htmlFor="booking-message" className="sr-only">
                 Message
               </label>
@@ -180,7 +269,7 @@ export default function Bookings() {
             </div>
 
             {status === "error" && (
-              <p className="text-red-400 text-sm">
+              <p className="text-red-400 text-base">
                 Something went wrong — please try again or email{" "}
                 <a href="mailto:stackrack@live.com" className="underline">
                   stackrack@live.com
@@ -192,7 +281,7 @@ export default function Bookings() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
+              className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-base uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
             >
               {isPending ? "Sending…" : "Send Booking Enquiry"}
             </button>

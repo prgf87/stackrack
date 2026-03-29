@@ -28,15 +28,15 @@ export default function Navbar() {
           : "bg-[#0a0a0f] border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-between h-16">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <a href="#home" className="flex items-center">
+        <a href="#home" className="flex items-center ">
           <Image
             src="/logo-white.png"
             alt="Stack Rack"
             width={180}
             height={58}
-            className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity"
+            className="h-12  w-auto opacity-90 hover:opacity-100 transition-opacity"
             priority
           />
         </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
             href="#bookings"
             className="ml-4 px-5 py-2 border border-emerald-600/60 text-emerald-400 hover:bg-emerald-700 hover:text-white text-xs tracking-[0.2em] uppercase transition-all duration-200"
           >
-            Enquire
+            Book Now
           </a>
         </nav>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-gray-300 hover:text-white text-sm tracking-[0.2em] uppercase transition-colors"
+              className="text-gray-300 hover:text-white text-base tracking-[0.2em] uppercase transition-colors"
             >
               {link.label}
             </a>

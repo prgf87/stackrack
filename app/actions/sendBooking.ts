@@ -13,10 +13,17 @@ export type BookingFormData = {
   eventDate: string;
   location: string;
   type: string;
+  budget: string;
   message: string;
+  honeypot: string;
 };
 
 export async function sendBookingEnquiry(data: BookingFormData) {
+  // Silently reject bot submissions (honeypot filled)
+  if (data.honeypot) {
+    return { success: true };
+  }
+
   try {
     // Notification to Stack Rack
     await resend.emails.send({
@@ -33,6 +40,7 @@ export async function sendBookingEnquiry(data: BookingFormData) {
             <tr><td style="padding:8px 0;color:#888">Date</td><td style="padding:8px 0;color:#fff">${data.eventDate || '—'}</td></tr>
             <tr><td style="padding:8px 0;color:#888">Location</td><td style="padding:8px 0;color:#fff">${data.location || '—'}</td></tr>
             <tr><td style="padding:8px 0;color:#888">Type</td><td style="padding:8px 0;color:#fff">${data.type}</td></tr>
+            <tr><td style="padding:8px 0;color:#888">Budget</td><td style="padding:8px 0;color:#fff">${data.budget || '—'}</td></tr>
           </table>
           ${data.message ? `<div style="margin-top:20px;padding:16px;background:#111;border-left:2px solid #00ff88;font-size:14px;color:#ccc">${data.message}</div>` : ''}
         </div>
@@ -49,7 +57,7 @@ export async function sendBookingEnquiry(data: BookingFormData) {
           <h2 style="color:#00ff88;font-size:20px;margin:0 0 16px">Thanks, ${data.name}.</h2>
           <p style="font-size:14px;line-height:1.6;color:#aaa;margin:0 0 16px">
             Your booking enquiry for <strong style="color:#fff">${data.eventName || 'your event'}</strong> has been received.
-            We'll be in touch as soon as possible.
+            We aim to respond within 48 hours.
           </p>
           <p style="font-size:13px;color:#666;margin:24px 0 0;border-top:1px solid #1a1a1a;padding-top:16px">
             Stack Rack · <a href="mailto:stackrack@live.com" style="color:#00ff88">stackrack@live.com</a>
