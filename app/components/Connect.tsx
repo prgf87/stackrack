@@ -30,6 +30,16 @@ const SOCIALS = [
     color: "hover:text-pink-400 hover:border-pink-400/50",
   },
   {
+    name: "Instagram",
+    url: "https://www.instagram.com/stack.rack/",
+    color: "hover:text-rose-400 hover:border-rose-400/50",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@stackrack",
+    color: "hover:text-red-400 hover:border-red-400/50",
+  },
+  {
     name: "Facebook",
     url: "https://www.facebook.com/stackrackmusic/",
     color: "hover:text-emerald-400 hover:border-emerald-400/50",
@@ -57,10 +67,10 @@ export default function Connect() {
   return (
     <section id="connect" className="py-16 md:py-20 px-6 md:px-8 bg-[#0d0d18]">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="text-xs tracking-[0.5em] text-emerald-400 uppercase mb-3">
+        <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Follow the Signal
         </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-8 tracking-wide">
           Connect
         </h2>
 
@@ -72,7 +82,7 @@ export default function Connect() {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-5 py-2.5 border border-white/12 text-gray-400 text-[11px] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
+              className={`px-5 py-2.5 border border-white/12 text-gray-400 text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white/5 ${s.color}`}
             >
               {s.name}
             </a>
@@ -81,12 +91,12 @@ export default function Connect() {
 
         {/* Newsletter */}
         <div className="max-w-md mx-auto">
-          <p className="text-gray-400 text-xs tracking-wide mb-5 uppercase">
+          <p className="text-gray-400 text-sm tracking-wide mb-5 uppercase">
             Stay informed — releases, shows, no spam
           </p>
 
           {status === "success" ? (
-            <p className="text-emerald-400 text-xs tracking-[0.3em] uppercase py-4">
+            <p className="text-emerald-400 text-sm tracking-[0.3em] uppercase py-4">
               You&apos;re on the list — check your inbox.
             </p>
           ) : (
@@ -101,12 +111,12 @@ export default function Connect() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1 bg-white/5 border border-white/10 border-r-0 text-white placeholder-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-emerald-600/80 transition-colors duration-200"
+                className="flex-1 bg-white/5 border border-white/10 border-r-0 text-white placeholder-gray-700 px-4 py-3 text-base focus:outline-none focus:border-emerald-600/80 transition-colors duration-200"
               />
               <button
                 type="submit"
                 disabled={isPending}
-                className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white text-[11px] tracking-[0.2em] uppercase transition-all duration-300 shrink-0"
+                className="px-6 py-3 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs tracking-[0.2em] uppercase transition-all duration-300 shrink-0"
               >
                 {isPending ? "…" : "Subscribe"}
               </button>
@@ -114,7 +124,7 @@ export default function Connect() {
           )}
 
           {status === "error" && (
-            <p className="text-red-400 text-xs mt-3">
+            <p className="text-red-400 text-sm mt-3">
               Something went wrong — try again or email{" "}
               <a href="mailto:stackrack@live.com" className="underline">
                 stackrack@live.com

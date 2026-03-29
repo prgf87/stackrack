@@ -237,7 +237,7 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="text-xs tracking-[0.5em] text-emerald-400/80 uppercase mb-10">
+        <p className="text-sm tracking-[0.5em] text-emerald-400/80 uppercase mb-10">
           Full-On Psychedelic Trance
         </p>
 
@@ -265,13 +265,13 @@ export default function Hero() {
         <div className="flex gap-4 justify-center flex-wrap">
           <a
             href="#bookings"
-            className="px-8 py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold tracking-[0.2em] text-xs uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(29,78,216,0.6)]"
+            className="px-8 py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(29,78,216,0.6)]"
           >
-            Enquire
+            Book Now
           </a>
           <a
             href="#music"
-            className="px-8 py-3.5 border border-white/20 hover:border-emerald-500/60 text-gray-300 hover:text-white font-semibold tracking-[0.2em] text-xs uppercase transition-all duration-300"
+            className="px-8 py-3.5 border border-white/20 hover:border-emerald-500/60 text-gray-300 hover:text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300"
           >
             Hear the Music
           </a>
@@ -280,7 +280,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-[10px] tracking-[0.4em] text-gray-500 uppercase">
+        <span className="text-xs tracking-[0.4em] text-gray-500 uppercase">
           Scroll
         </span>
         <div
