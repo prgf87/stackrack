@@ -146,8 +146,6 @@ const BEATPORT_RELEASES = RELEASES.filter((r) =>
 
 const TABS: { id: Tab; label: string }[] = [
   { id: "bandcamp", label: "Latest Release" },
-  { id: "spotify", label: "Spotify" },
-  { id: "beatport", label: "Buy on Beatport" },
 ];
 
 export default function Music() {
@@ -230,62 +228,6 @@ export default function Music() {
                 </div>
               );
             })()}
-
-          {activeTab === "spotify" && (
-            <iframe
-              src="https://open.spotify.com/embed/artist/6v9NIHItM3m531lZYWUphW"
-              width="100%"
-              height="352"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen
-              className="border-0 rounded-sm"
-              title="Stack Rack on Spotify"
-            />
-          )}
-
-          {activeTab === "beatport" && (
-            <div className="flex flex-col gap-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {BEATPORT_RELEASES.map((release) => (
-                  <a
-                    key={release.title}
-                    href={release.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group overflow-hidden bg-white/3 hover:bg-white/8 border border-white/5 hover:border-[#01ff95]/40 transition-all duration-300"
-                  >
-                    <div className="aspect-square overflow-hidden relative">
-                      <Image
-                        src={release.cover}
-                        alt={`Stack Rack — ${release.title} (${release.year}) on ${release.label}`}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                      />
-                    </div>
-                    <div className="p-3.5">
-                      <p className="text-white text-sm font-semibold leading-snug">
-                        {release.title}
-                      </p>
-                      <p className="text-gray-400 text-xs mt-1">
-                        {release.label} · {release.year}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-              <div className="flex justify-center">
-                <a
-                  href="https://www.beatport.com/artist/stack-rack/540654"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-10 py-4 bg-[#01ff95] hover:bg-[#00e085] text-black font-bold tracking-[0.2em] text-sm uppercase transition-all duration-300"
-                >
-                  View All on Beatport
-                </a>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Divider */}
