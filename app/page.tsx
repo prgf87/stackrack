@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Music from './components/Music';
+import Videos from './components/Videos';
 import Mixes from './components/Mixes';
 import LiveDates from './components/LiveDates';
 import Bookings from './components/Bookings';
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <About />
         <Music />
+        <Videos />
         <Mixes />
         <LiveDates />
         <Bookings />
