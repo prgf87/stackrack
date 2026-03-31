@@ -11,14 +11,16 @@ export default function Videos() {
 
         <div className="border border-white/8 bg-white/2">
           <video
-            src="/mauiwaui.mp4"
             controls
             className="w-full block"
             preload="metadata"
+            src="https://res.cloudinary.com/dzitj9wug/video/upload/v1774908111/MauiWaui720p_xartxb.mp4"
           />
+
           <div className="px-5 py-4">
             <p className="text-white font-display font-bold tracking-wide text-lg">
-              Stack Rack @ Maui Waui - Psybercell Stage
+              Stack Rack @ Psybercell Stage - Maui Waui Festival 2023 <br />{" "}
+              Video Credit: LettuceJam
             </p>
             <p className="text-white font-light tracking-wide text-sm">
               Track ID: Wavelength VS Stack Rack - Alpha Centauri

@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Videos", href: "#videos" },
   { label: "Mixes", href: "#mixes" },
   { label: "Dates", href: "#dates" },
+  { label: "Connect", href: "#connect" },
 ];
 
 export default function Navbar() {
