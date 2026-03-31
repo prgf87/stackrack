@@ -28,13 +28,13 @@ export default function About() {
 
         <div className="space-y-5 text-gray-400 leading-relaxed text-base">
           <p>
-            Stack Rack is the alias of Pedro Ferreira — a distinguished UK-based
-            Portuguese psychedelic trance producer and DJ whose 20-plus year
-            career has made him a respected figure in the global full-on and
-            twilight psytrance scene. His signature sound combines powerful
-            driving basslines, intricate percussion, soaring arpeggios and
-            aggressive acid and FM lines — a deliberate full-on assault at
-            146–148 BPM liberally charged with twilight modulations and
+            Stack Rack is the alias of Pedro Ferreira — a UK-based Portuguese
+            psychedelic trance producer and DJ whose 20-plus year career has
+            made him a respected figure in the global full-on and twilight
+            psytrance scene. His signature sound combines powerful driving
+            basslines, intricate percussion, soaring arpeggios and aggressive
+            acid and FM lines — a deliberate full-on assault anywhere from 145
+            to 150 BPM, liberally charged with twilight modulations and
             Goa-inspired euphoric moments.
           </p>
 
@@ -45,9 +45,9 @@ export default function About() {
             seminal album{" "}
             <em className="text-emerald-400 not-italic font-medium">Twisted</em>{" "}
             sparked an obsessive need to understand the mechanics of psychedelic
-            music production, setting him on a path of intensive study in music
-            theory, composition and computer music systems — with Cubase
-            becoming his primary creative instrument.
+            music production, setting him on a life-long path of intensive study
+            in music theory, composition and computer music systems — with
+            Cubase becoming his primary creative instrument.
           </p>
 
           <blockquote className="mt-8 border-l-2 border-emerald-400 pl-5 text-gray-500 italic leading-relaxed text-sm">
@@ -94,12 +94,14 @@ export default function About() {
           </p>
 
           <p>
-            Stack Rack has performed across three continents — a five-club week
-            in Tokyo (2023), Touch Samadhi Festival in North Carolina (2019),
-            Sacred Earth in Missouri (2022) and Maui Waui Festival, UK. He has
-            shared stages with Ace Ventura, Burn in Noise, Laughing Buddha,
-            Scorb, Symbolic, Mandala, Tron, Dirty Saffi, Illegal Machines and
-            headlined countless events across the UK circuit.
+            Stack Rack has now performed across three continents — a five-club
+            week in Tokyo (2023), Touch Samadhi Festival in North Carolina
+            (2019), Sacred Earth in Missouri (2022) and Maui Waui Festival, UK.
+            He has shared stages with Ace Ventura, Burn in Noise, Laughing
+            Buddha, Scorb, Symbolic, Mandala, Tron, Dirty Saffi, Illegal
+            Machines and headlined prestigious events across the UK circuit,
+            including Tribe of Frog, Alchemy Festival, Psymera Festival, Planet
+            Zogg and Elemental.
           </p>
 
           <p>
