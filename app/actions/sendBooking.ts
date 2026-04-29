@@ -16,12 +16,85 @@ export type BookingFormData = {
   budget: string;
   message: string;
   honeypot: string;
+  recaptchaToken: string;
 };
+
+// Spam detection: checks for random garbage strings
+function isLikelySpam(text: string): boolean {
+  if (!text) return false;
+  
+  // Random long strings with mixed cases and numbers (typical spam)
+  // Pattern: 10+ chars, 60%+ non-vowel alphanumeric
+  if (text.length > 12) {
+    const nonVowels = (text.match(/[bcdfghjklmnpqrstvwxyz0-9]/gi) || []).length;
+    const consonantRatio = nonVowels / text.length;
+    if (consonantRatio > 0.6) return true;
+  }
+  
+  // Too many numbers in text meant to be readable (names, event names)
+  const numberRatio = (text.match(/\d/g) || []).length / text.length;
+  if (numberRatio > 0.3) return true;
+  
+  return false;
+}
+
+// Validate that email looks legitimate
+function isValidEmail(email: string): boolean {
+  // Basic format check
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+  
+  // Check for legitimate domain patterns
+  const domain = email.split('@')[1].toLowerCase();
+  const knownSpamDomains = ['test.com', 'temp.email', '8.4fatboy@gmail.com'];
+  if (knownSpamDomains.includes(email)) return false;
+  
+  return true;
+}
 
 export async function sendBookingEnquiry(data: BookingFormData) {
   // Silently reject bot submissions (honeypot filled)
   if (data.honeypot) {
     return { success: true };
+  }
+
+  // Verify reCAPTCHA token
+  try {
+    const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.GOOGLE_RE_CAPTCHA_SECRET_KEY}&response=${data.recaptchaToken}`,
+    });
+
+    const recaptchaData = await recaptchaResponse.json();
+
+    // reCAPTCHA v3 returns a score 0.0 to 1.0 (1.0 = likely legitimate)
+    // 0.5 is a reasonable threshold
+    if (!recaptchaData.success || recaptchaData.score < 0.5) {
+      console.log('reCAPTCHA failed or low score:', recaptchaData.score);
+      return { success: true }; // Silently reject
+    }
+  } catch (err) {
+    console.error('reCAPTCHA verification error:', err);
+    return { success: true }; // Silently reject on error
+  }
+
+  // Spam pattern detection
+  if (isLikelySpam(data.name) || isLikelySpam(data.eventName) || isLikelySpam(data.location)) {
+    console.log('Spam detected in form fields');
+    return { success: true }; // Silently reject
+  }
+
+  // Email validation
+  if (!isValidEmail(data.email)) {
+    console.log('Invalid email detected:', data.email);
+    return { success: true }; // Silently reject
+  }
+
+  // Require at least some fields filled out
+  const filledFields = [data.name, data.eventName, data.location, data.budget].filter(f => f && f.trim()).length;
+  if (filledFields < 2) {
+    console.log('Too few fields filled in submission');
+    return { success: true }; // Silently reject
   }
 
   try {
