@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useReCaptcha } from "next-recaptcha-v3";
 import { sendBookingEnquiry } from "../actions/sendBooking";
 
 const STATS = [
@@ -23,12 +24,18 @@ export default function Bookings() {
   });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isPending, startTransition] = useTransition();
+  const { executeRecaptcha } = useReCaptcha();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     startTransition(async () => {
-      const result = await sendBookingEnquiry(formData);
-      setStatus(result.success ? "success" : "error");
+      try {
+        const token = await executeRecaptcha("booking");
+        const result = await sendBookingEnquiry({ ...formData, recaptchaToken: token });
+        setStatus(result.success ? "success" : "error");
+      } catch {
+        setStatus("error");
+      }
     });
   };
 

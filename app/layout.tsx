@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Space_Grotesk } from "next/font/google";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -228,7 +229,9 @@ export default function RootLayout({
         ))}
       </head>
       <body className="font-sans bg-[#0a0a0f] text-gray-300 antialiased">
-        {children}
+        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RE_CAPTCHA_SITE_KEY}>
+          {children}
+        </ReCaptchaProvider>
       </body>
     </html>
   );
