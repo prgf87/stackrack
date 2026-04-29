@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { CldImage } from "next-cloudinary";
 
 export default function Mixes() {
   return (
@@ -14,8 +16,8 @@ export default function Mixes() {
         {/* Live photo strip */}
         <div className="grid grid-cols-2 gap-2 mb-6">
           <div className="relative aspect-video overflow-hidden">
-            <Image
-              src="/live-dj-1.jpeg"
+            <CldImage
+              src="profile_1_x8qwcc.jpg"
               alt="Stack Rack live DJ set — close-up of decks under purple UV lights"
               fill
               sizes="(max-width: 768px) 50vw, 33vw"
@@ -24,8 +26,8 @@ export default function Mixes() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
           </div>
           <div className="relative aspect-video overflow-hidden">
-            <Image
-              src="/live-dj-2.jpeg"
+            <CldImage
+              src="profile_2_hcqqpt.jpg"
               alt="Stack Rack performing live under blue UV lights"
               fill
               sizes="(max-width: 768px) 50vw, 33vw"

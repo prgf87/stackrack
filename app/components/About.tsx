@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { CldImage } from "next-cloudinary";
 
 export default function About() {
   return (
@@ -14,8 +16,8 @@ export default function About() {
         {/* Image floats right — text wraps around it, then flows full-width once past */}
         <div className="md:float-right md:ml-10 md:mb-6 mb-8 md:w-[38%]">
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
-            <Image
-              src="/profile-picture.jpg"
+            <CldImage
+              src="profile-picture_fqm9lm.jpg"
               alt="Stack Rack (Pedro Ferreira) — full-on psychedelic trance artist and DJ, active since 2003"
               fill
               sizes="(max-width: 768px) 100vw, 38vw"
