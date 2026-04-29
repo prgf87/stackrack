@@ -17,7 +17,7 @@ export default function Bookings() {
     eventName: "",
     eventDate: "",
     location: "",
-    type: "DJ Set",
+    type: "",
     budget: "",
     message: "",
     honeypot: "",
@@ -31,7 +31,10 @@ export default function Bookings() {
     startTransition(async () => {
       try {
         const token = await executeRecaptcha("booking");
-        const result = await sendBookingEnquiry({ ...formData, recaptchaToken: token });
+        const result = await sendBookingEnquiry({
+          ...formData,
+          recaptchaToken: token,
+        });
         setStatus(result.success ? "success" : "error");
       } catch {
         setStatus("error");
@@ -108,7 +111,7 @@ export default function Bookings() {
                   eventName: "",
                   eventDate: "",
                   location: "",
-                  type: "DJ Set",
+                  type: "",
                   budget: "",
                   message: "",
                   honeypot: "",
@@ -230,9 +233,14 @@ export default function Bookings() {
                   }
                   className={`${inputClass} cursor-pointer`}
                 >
+                  {/* add an empty option */}
+                  <option className="bg-[#0a0a0f] text-white" value="" disabled>
+                    Performance Type - Please Select
+                  </option>
                   <option className="bg-[#0a0a0f] text-white" value="DJ Set">
                     DJ Set
                   </option>
+
                   <option className="bg-[#0a0a0f] text-white" value="Live Set">
                     Live Set
                   </option>
