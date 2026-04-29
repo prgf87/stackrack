@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack is Pedro Ferreira — veteran psytrance producer and DJ active since 2003. Beatport charting Artist, Audience from 50+ countries, Tokyo club tour and multiple US festival stages. Available now for international bookings.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines built for festival dancefloors. Explore releases, mixes and live sets from Tokyo to the UK underground. Bookings open.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
     "Sculpted Sounds",
     "psytrance DJ",
     "psytrance producer",
+    "new psytrance releases 2025",
+    "psytrance mixes",
     "psytrance DJ booking UK",
-    "full-on psychedelic trance artist for hire",
     "UK psytrance DJ",
     "psytrance festival DJ",
     "psychedelic trance live act UK",
     "psytrance UK underground",
     "UK Goa trance producer",
     "Planetary Collisions album",
+    "Year of the Snake",
     "book psytrance DJ",
-    "psytrance DJ hire",
-    "Kentish psytrance",
     "Anthropod",
     "Alien Devices",
     "Systematic Audio",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — psytrance producer and DJ active since 2003. Available for festivals, club nights and international bookings.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from Tokyo to the festival circuit. Bookings open.",
     url: SITE_URL,
     siteName: "Stack Rack",
     images: [
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — psytrance producer and DJ active since 2003. Available for festivals, club nights and international bookings.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from Tokyo to the festival circuit. Bookings open.",
     images: [OG_IMAGE],
     creator: "@stackrack",
   },
@@ -98,7 +98,7 @@ const musicGroupSchema = {
   name: "Stack Rack",
   alternateName: "Pedro Ferreira",
   description:
-    "Full-on psychedelic trance producer and DJ from Portugal, active since 2003. #3 Beatport, Tokyo tour, US festivals. Releases on Sculpted Sounds, Cosmic Era, MMD Records.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines shaped by 20+ years on festival dancefloors from Tokyo to the UK underground. Releases on Sculpted Sounds, MMD Records and more.",
   genre: ["Psychedelic trance", "Full-on psytrance", "Goa trance"],
   foundingDate: "2003",
   foundingLocation: {
@@ -139,7 +139,7 @@ const personSchema = {
     "Systematic Audio",
   ],
   description:
-    "Full-on psychedelic trance artist, producer and DJ known as Stack Rack. Active since 2003. Beatport charting Artist, Audience from 50+ countries, Tokyo club tour and multiple US festival stages. Available for festivals, headline slots and international bookings.",
+    "Pedro Ferreira has been making psychedelic trance music as Stack Rack since 2003. Known for powerful, danceable full-on psytrance with twilight and Goa-inspired moments — releasing on Sculpted Sounds, MMD Records and charting at #3 on Beatport. Available for festivals, clubs and international bookings.",
   nationality: "Portuguese",
   url: SITE_URL,
   sameAs: [SITE_URL],
@@ -151,7 +151,7 @@ const websiteSchema = {
   name: "Stack Rack",
   url: SITE_URL,
   description:
-    "Official website of Stack Rack —  full-on psychedelic trance artist and DJ.",
+    "Official website of Stack Rack — explore full-on psychedelic trance music, mixes, videos and releases.",
 };
 
 const albumSchemas = [

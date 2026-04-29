@@ -14,10 +14,10 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Music />
         <Videos />
         <Mixes />
+        <About />
         <Bookings />
         <Connect />
       </main>

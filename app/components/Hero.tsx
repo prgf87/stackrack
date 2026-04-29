@@ -241,7 +241,7 @@ export default function Hero() {
           Full-On Psychedelic Trance
         </p>
 
-        <h1 className="sr-only">Stack Rack</h1>
+        <h1 className="sr-only">Stack Rack — Full-On Psychedelic Trance from the UK Underground</h1>
 
         <div className="flex justify-center mb-8">
           <Image
@@ -259,21 +259,21 @@ export default function Hero() {
         </div>
 
         <p className="text-gray-400 text-sm md:text-base tracking-[0.35em] uppercase mb-12">
-          Veteran Psytrance Producer & DJ · 20+ Years Underground
+          Full-On Psytrance · New Releases Out Now
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">
           <a
-            href="#bookings"
+            href="#music"
             className="px-8 py-3.5 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(29,78,216,0.6)]"
           >
-            Book Now
+            Hear the Music
           </a>
           <a
-            href="#music"
+            href="#bookings"
             className="px-8 py-3.5 border border-white/20 hover:border-emerald-500/60 text-gray-300 hover:text-white font-semibold tracking-[0.2em] text-sm uppercase transition-all duration-300"
           >
-            Hear the Music
+            Book Now
           </a>
         </div>
       </div>
