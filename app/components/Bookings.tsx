@@ -3,11 +3,12 @@
 import { useState, useTransition } from "react";
 import { useReCaptcha } from "next-recaptcha-v3";
 import { sendBookingEnquiry } from "../actions/sendBooking";
+import Link from "next/link";
 
 const STATS = [
-  { value: "20+", label: "Years Active" },
-  { value: "Japan · US · UK", label: "International" },
-  { value: "Headline / Club / Festival", label: "Available For" },
+  { value: "145–150 BPM", label: "Full-On to Twilight" },
+  { value: "20+", label: "Years Underground" },
+  { value: "3 Continents", label: "Dancefloors Moved" },
 ];
 
 export default function Bookings() {
@@ -49,33 +50,33 @@ export default function Bookings() {
     <section id="bookings" className="py-16 md:py-20 px-6 md:px-8 bg-[#0a0a0f]">
       <div className="max-w-3xl mx-auto">
         <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
-          Get in Touch
+          Bring the Sound
         </p>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
-          Book Stack Rack
+          Take Your Dancefloor Somewhere New
         </h2>
         <p className="text-gray-400 mb-8 text-base leading-relaxed">
-          Headline slots, club nights and international bookings available for
-          Q3 2026 and beyond. Fill out the form below with as much info as
-          possible about your event, and we&apos;ll get back to you within 48-72
-          hours.
+          Full-on psychedelic trance that builds, breathes and releases —
+          crafted for crowds that want more than a set. Whether you&apos;re
+          programming a headline slot, a late-night room or an outdoor stage,
+          tell us about your event and let&apos;s see if it&apos;s a fit.
+          We&apos;ll come back to you within 48–72 hours.
         </p>
 
-        <p className="text-gray-400 text-base mb-8 tracking-wide">
-          PLEASE NOTE: Replies will only include the full EPK and technical
-          rider upon request.
-        </p>
-        <p className="text-gray-400 mb-8 text-base tracking-wide">
-          For urgent enquiries, please email{" "}
-          <a href="mailto:stackrack@live.com" className="underline">
+        <p className="text-gray-500 text-sm mb-8">
+          EPK and technical rider available on request &middot; Urgent
+          enquiries:{" "}
+          <a
+            href="mailto:stackrack@live.com"
+            className="text-gray-400 hover:text-emerald-400 transition-colors duration-200"
+          >
             stackrack@live.com
           </a>
-          .
         </p>
 
         <p className="flex items-center gap-2 text-base text-emerald-400/80 mb-6">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-          Currently taking bookings for Q3 2026 and beyond
+          Open for Q3 2026 and beyond
         </p>
 
         {/* Trust stats */}
@@ -92,15 +93,25 @@ export default function Bookings() {
 
         {status === "success" ? (
           <div className="py-16 text-center border border-white/8">
-            <p className="text-emerald-400 text-sm tracking-[0.5em] uppercase mb-3">
-              Enquiry Sent
-            </p>
-            <p className="text-white text-xl mb-2">
-              Thank you for reaching out <br /> We&apos;ll be in touch in the
-              next 48-72 hours.
+            <p className="text-emerald-400 text-2xl tracking-[0.25em] uppercase mb-6">
+              Signal Received
             </p>
             <p className="text-gray-400 text-base my-8">
-              A confirmation has been sent to {formData.email}
+              A confirmation has been sent to {formData.email}.
+            </p>
+            <p className="text-white text-xl mb-2">
+              We&apos;ll be in touch within 48–72 hours.
+            </p>
+            <p className="text-gray-400 text-base mb-8">
+              In the meantime, the music is all yours.{" "}
+              <span>
+                <Link
+                  href="/mixes"
+                  className="underline text-emerald-400 hover:text-emerald-500 transition-colors duration-200"
+                >
+                  Explore mixes & radio
+                </Link>
+              </span>
             </p>
             <button
               onClick={() => {
@@ -296,7 +307,7 @@ export default function Bookings() {
               </label>
               <textarea
                 id="booking-message"
-                placeholder="Tell us about your event…"
+                placeholder="Tell us about the vibe you're going for, your crowd, the stage…"
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
@@ -321,7 +332,7 @@ export default function Bookings() {
               disabled={isPending}
               className="w-full py-4 bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed text-white font-semibold tracking-[0.2em] text-base uppercase transition-all duration-300 hover:shadow-[0_0_40px_rgba(29,78,216,0.5)]"
             >
-              {isPending ? "Sending…" : "Send Booking Enquiry"}
+              {isPending ? "Sending…" : "Start the Conversation"}
             </button>
           </form>
         )}

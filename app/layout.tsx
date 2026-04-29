@@ -16,13 +16,13 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE_URL = "https://stackrack.co.uk";
-const OG_IMAGE = `${SITE_URL}/profile-picture.JPG`;
+const OG_IMAGE = `${SITE_URL}/profile-picture.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines built for festival dancefloors. Explore releases, mixes and live sets from Tokyo to the UK underground. Bookings open.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines built for festival dancefloors. Explore releases, mixes and live sets from the USA and Japan to the UK underground. Bookings open.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
     "night full-on",
     "twilight full-on",
     "Pedro Ferreira",
-    "UK psytrance",
-    "UK psychedelic trance",
     "Goa trance",
     "Goa trance DJ",
     "Sculpted Sounds",
@@ -40,14 +38,10 @@ export const metadata: Metadata = {
     "psytrance producer",
     "new psytrance releases 2025",
     "psytrance mixes",
-    "psytrance DJ booking UK",
-    "UK psytrance DJ",
+    "psytrance DJ booking",
     "psytrance festival DJ",
-    "psychedelic trance live act UK",
-    "psytrance UK underground",
-    "UK Goa trance producer",
-    "Planetary Collisions album",
-    "Year of the Snake",
+    "psychedelic trance live act",
+    "UK psytrance underground",
     "book psytrance DJ",
     "Anthropod",
     "Alien Devices",
@@ -66,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from Tokyo to the festival circuit. Bookings open.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     url: SITE_URL,
     siteName: "Stack Rack",
     images: [
@@ -84,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from Tokyo to the festival circuit. Bookings open.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     images: [OG_IMAGE],
     creator: "@stackrack",
   },
@@ -98,7 +92,7 @@ const musicGroupSchema = {
   name: "Stack Rack",
   alternateName: "Pedro Ferreira",
   description:
-    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines shaped by 20+ years on festival dancefloors from Tokyo to the UK underground. Releases on Sculpted Sounds, MMD Records and more.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines shaped by 20+ years on festival dancefloors from USA and Tokyo to the UK underground. Releases on Sculpted Sounds, MMD Records and more.",
   genre: ["Psychedelic trance", "Full-on psytrance", "Goa trance"],
   foundingDate: "2003",
   foundingLocation: {
