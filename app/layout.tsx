@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Space_Grotesk } from "next/font/google";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -15,37 +16,33 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE_URL = "https://stackrack.co.uk";
-const OG_IMAGE = `${SITE_URL}/profile-picture.JPG`;
+const OG_IMAGE = `${SITE_URL}/profile-picture.jpg`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Stack Rack | Full-On Psychedelic Trance",
   description:
-    "Stack Rack is Pedro Ferreira — veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines built for festival dancefloors. Explore releases, mixes and live sets from the USA and Japan to the UK underground. Bookings open.",
   keywords: [
     "Stack Rack",
     "psychedelic trance",
     "psytrance",
     "full-on psytrance",
+    "night full-on",
+    "twilight full-on",
     "Pedro Ferreira",
-    "UK psytrance",
-    "UK psychedelic trance",
     "Goa trance",
     "Goa trance DJ",
     "Sculpted Sounds",
     "psytrance DJ",
     "psytrance producer",
-    "psytrance DJ booking UK",
-    "full-on psychedelic trance artist for hire",
-    "UK psytrance DJ",
+    "new psytrance releases 2025",
+    "psytrance mixes",
+    "psytrance DJ booking",
     "psytrance festival DJ",
-    "psychedelic trance live act UK",
-    "psytrance UK underground",
-    "UK Goa trance producer",
-    "Planetary Collisions album",
+    "psychedelic trance live act",
+    "UK psytrance underground",
     "book psytrance DJ",
-    "psytrance DJ hire",
-    "Kentish psytrance",
     "Anthropod",
     "Alien Devices",
     "Systematic Audio",
@@ -63,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     url: SITE_URL,
     siteName: "Stack Rack",
     images: [
@@ -71,7 +68,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Stack Rack (Pedro Ferreira) — UK full-on psychedelic trance artist and DJ",
+        alt: "Stack Rack (Pedro Ferreira) — full-on psychedelic trance artist and DJ",
       },
     ],
     type: "website",
@@ -81,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Stack Rack is Pedro Ferreira — UK veteran psytrance producer and DJ active since 2003. #3 Beatport, Tokyo tour, US festival stages. Available for headline slots and international bookings.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     images: [OG_IMAGE],
     creator: "@stackrack",
   },
@@ -95,12 +92,12 @@ const musicGroupSchema = {
   name: "Stack Rack",
   alternateName: "Pedro Ferreira",
   description:
-    "Full-on psychedelic trance producer and DJ from the UK, active since 2003. #3 Beatport, Tokyo tour, US festivals. Releases on Sculpted Sounds, Cosmic Era, MMD Records.",
+    "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines shaped by 20+ years on festival dancefloors from USA and Tokyo to the UK underground. Releases on Sculpted Sounds, MMD Records and more.",
   genre: ["Psychedelic trance", "Full-on psytrance", "Goa trance"],
   foundingDate: "2003",
   foundingLocation: {
     "@type": "Place",
-    name: "Kent, England, United Kingdom",
+    name: "Portugal",
   },
   member: {
     "@type": "Person",
@@ -136,8 +133,8 @@ const personSchema = {
     "Systematic Audio",
   ],
   description:
-    "UK-based full-on psychedelic trance artist, producer and DJ known as Stack Rack. Active since 2003. #3 Beatport, international festival and club bookings.",
-  nationality: "British",
+    "Pedro Ferreira has been making psychedelic trance music as Stack Rack since 2003. Known for powerful, danceable full-on psytrance with twilight and Goa-inspired moments — releasing on Sculpted Sounds, MMD Records and charting at #3 on Beatport. Available for festivals, clubs and international bookings.",
+  nationality: "Portuguese",
   url: SITE_URL,
   sameAs: [SITE_URL],
 };
@@ -148,7 +145,7 @@ const websiteSchema = {
   name: "Stack Rack",
   url: SITE_URL,
   description:
-    "Official website of Stack Rack — UK full-on psychedelic trance artist and DJ.",
+    "Official website of Stack Rack — explore full-on psychedelic trance music, mixes, videos and releases.",
 };
 
 const albumSchemas = [
@@ -228,7 +225,11 @@ export default function RootLayout({
         ))}
       </head>
       <body className="font-sans bg-[#0a0a0f] text-gray-300 antialiased">
-        {children}
+        <ReCaptchaProvider
+          reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        >
+          {children}
+        </ReCaptchaProvider>
       </body>
     </html>
   );
