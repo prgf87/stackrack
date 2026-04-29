@@ -15,11 +15,11 @@ export default function About() {
         <div className="md:float-right md:ml-10 md:mb-6 mb-8 md:w-[38%]">
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
             <Image
-              src="/profile-picture.JPG"
-              alt="Stack Rack (Pedro Ferreira) — UK full-on psychedelic trance artist and DJ, active since 2003"
+              src="/profile-picture.jpg"
+              alt="Stack Rack (Pedro Ferreira) — full-on psychedelic trance artist and DJ, active since 2003"
               fill
               sizes="(max-width: 768px) 100vw, 38vw"
-              className="object-cover object-center"
+              className="object-cover object-bottom rounded-md"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-transparent" />
