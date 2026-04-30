@@ -15,9 +15,9 @@ export default function Home() {
       <main>
         <Hero />
         <Music />
-        <Videos />
         <Mixes />
         <About />
+        <Videos />
         <Bookings />
         <Connect />
       </main>

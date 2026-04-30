@@ -335,10 +335,10 @@ export default function Music() {
 
         {/* Divider */}
         <div className="mb-10">
-          <p className="text-sm tracking-[0.4em] text-gray-400 uppercase mb-6">
+          <h3 className="font-display text-4xl font-bold text-white mb-4 tracking-wider">
             All Releases
-          </p>
-          <div className="w-12 h-px bg-emerald-600/60" />
+          </h3>
+          <div className="w-[10em] h-px bg-emerald-600/60" />
         </div>
 
         {/* Release cards grid */}

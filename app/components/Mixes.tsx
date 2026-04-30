@@ -9,9 +9,9 @@ export default function Mixes() {
         <p className="text-sm tracking-[0.5em] text-emerald-400 uppercase mb-3">
           Mixes & Radio
         </p>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 tracking-wide">
+        <h4 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 tracking-wide">
           Lost in the Cloud
-        </h2>
+        </h4>
 
         {/* Live photo strip */}
         <div className="grid grid-cols-2 gap-2 mb-6">
@@ -37,6 +37,33 @@ export default function Mixes() {
           </div>
         </div>
 
+        {/* Mixcloud embeds */}
+        <div className="mb-2">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
+            Latest on Mixcloud
+          </p>
+          <div className="flex flex-col gap-2">
+            <iframe
+              width="100%"
+              height="120"
+              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FStackRack%2Fstack-rack-live-womb-tokyo%2F"
+              className="border-0 block border border-white/5"
+              title="Stack Rack LIVE @ WOMB, Tokyo"
+              loading="lazy"
+              allow="autoplay"
+            />
+            <iframe
+              width="100%"
+              height="120"
+              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FStackRack%2F2018-psychedelic-full-on-psytrance-dj-mix%2F"
+              className="border-0 block border border-white/5"
+              title="2018 Psychedelic Full-On Psytrance DJ Mix"
+              loading="lazy"
+              allow="autoplay"
+            />
+          </div>
+        </div>
+
         {/* SoundCloud embed */}
         <div className="mb-6 border border-white/5">
           <iframe
@@ -54,13 +81,18 @@ export default function Mixes() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-white/8 bg-white/2">
           <div>
             <p className="text-gray-400 text-base">
-              More mixes and free tracks available on SoundCloud.
-            </p>
-            <p className="text-gray-400 text-sm mt-1">
-              EPK and tech rider available on request.
+              Mixes available on Mixcloud and SoundCloud.
             </p>
           </div>
-          <div className="flex gap-3 shrink-0">
+          <div className="flex gap-3 shrink-0 flex-wrap">
+            <a
+              href="https://www.mixcloud.com/StackRack/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 border border-white/15 text-gray-400 hover:text-white hover:border-white/30 text-sm tracking-[0.2em] uppercase transition-all duration-200"
+            >
+              Mixcloud
+            </a>
             <a
               href="https://soundcloud.com/stackrack"
               target="_blank"
