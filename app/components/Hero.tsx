@@ -237,11 +237,9 @@ export default function Hero() {
 
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <p className="text-sm tracking-[0.5em] text-emerald-400/80 uppercase mb-10">
-          Full-On Psychedelic Trance
-        </p>
-
-        <h1 className="sr-only">Stack Rack — Full-On Psychedelic Trance from the UK Underground</h1>
+        <h1 className="sr-only">
+          Stack Rack — Full-On Psychedelic Trance from the UK Underground
+        </h1>
 
         <div className="flex justify-center mb-8">
           <Image
@@ -258,8 +256,8 @@ export default function Hero() {
           />
         </div>
 
-        <p className="text-gray-400 text-sm md:text-base tracking-[0.35em] uppercase mb-12">
-          Full-On Psytrance · New Releases Out Now
+        <p className="text-sm tracking-[0.5em] text-emerald-400/80 uppercase mb-10">
+          Full-On Psychedelic Trance
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">

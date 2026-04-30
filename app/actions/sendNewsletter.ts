@@ -6,7 +6,31 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FROM = 'Stack Rack <noreply@stackrack.co.uk>';
 
-export async function sendNewsletterSignup(email: string) {
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+export async function sendNewsletterSignup(email: string, recaptchaToken: string) {
+  if (!isValidEmail(email)) {
+    return { success: true }; // Silently reject invalid emails
+  }
+
+  try {
+    const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.GOOGLE_RE_CAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+    });
+    const recaptchaData = await recaptchaResponse.json();
+    if (!recaptchaData.success || recaptchaData.score < 0.5) {
+      console.log('Newsletter reCAPTCHA failed or low score:', recaptchaData.score);
+      return { success: true }; // Silently reject
+    }
+  } catch (err) {
+    console.error('Newsletter reCAPTCHA verification error:', err);
+    return { success: true }; // Silently reject on error
+  }
+
   try {
     // Notification to Stack Rack
     await resend.emails.send({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useReCaptcha } from "next-recaptcha-v3";
 import { sendNewsletterSignup } from "../actions/sendNewsletter";
 
 const SOCIALS = [
@@ -55,13 +56,19 @@ export default function Connect() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [isPending, startTransition] = useTransition();
+  const { executeRecaptcha } = useReCaptcha();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     startTransition(async () => {
-      const result = await sendNewsletterSignup(email);
-      if (result.success) setEmail("");
-      setStatus(result.success ? "success" : "error");
+      try {
+        const token = await executeRecaptcha("newsletter");
+        const result = await sendNewsletterSignup(email, token);
+        if (result.success) setEmail("");
+        setStatus(result.success ? "success" : "error");
+      } catch {
+        setStatus("error");
+      }
     });
   };
 
