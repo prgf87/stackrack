@@ -56,22 +56,19 @@ export default function Bookings() {
           Take Your Dancefloor Somewhere New
         </h2>
         <p className="text-gray-400 mb-8 text-base leading-relaxed">
-          Full-on psychedelic trance that builds, breathes and releases —
-          crafted for crowds that want more than a set. Whether you&apos;re
-          programming a headline slot, a late-night room or an outdoor stage,
-          tell us about your event and let&apos;s see if it&apos;s a fit.
-          We&apos;ll come back to you within 48–72 hours.
+          Fill in the form below to start the conversation about your event,
+          festival or venue — or email{" "}
+          <a
+            href="mailto:stackrack@live.com"
+            className="text-gray-400 hover:text-emerald-400 transition-colors duration-200 underline  underline-offset-2"
+          >
+            stackrack@live.com
+          </a>{" "}
+          for any enquiries.
         </p>
 
         <p className="text-gray-500 text-sm mb-8">
-          EPK and technical rider available on request &middot; Urgent
-          enquiries:{" "}
-          <a
-            href="mailto:stackrack@live.com"
-            className="text-gray-400 hover:text-emerald-400 transition-colors duration-200"
-          >
-            stackrack@live.com
-          </a>
+          EPK and technical rider available on request
         </p>
 
         <p className="flex items-center gap-2 text-base text-emerald-400/80 mb-6">
