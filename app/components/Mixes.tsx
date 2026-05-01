@@ -111,6 +111,70 @@ export default function Mixes() {
           </a>
         </div>
 
+        {/* Trance México guest mix */}
+        <div className="mb-6">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
+            Guest Mix · Trance México
+          </p>
+          <a
+            href="https://soundcloud.com/trance-mexico/stack-rack-set-469-exclusivo-para-trance-mexico"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 p-5 border border-white/8 bg-white/2 hover:border-white/20 hover:bg-white/4 transition-all duration-200"
+          >
+            <div className="flex items-center gap-4 min-w-0">
+              <div className="shrink-0 w-10 h-10 flex items-center justify-center border border-white/10 bg-white/5">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-emerald-400" fill="currentColor">
+                  <path d="M5 3l14 9-14 9V3z" />
+                </svg>
+              </div>
+              <div className="min-w-0">
+                <p className="text-white text-sm font-medium truncate group-hover:text-emerald-400 transition-colors duration-200">
+                  Stack Rack / Set #469 exclusivo para Trance México
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">
+                  Psytrance &middot; Full-on &middot; Trance México
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-xs tracking-[0.2em] text-gray-500 uppercase group-hover:text-emerald-400 transition-colors duration-200">
+              Listen
+            </span>
+          </a>
+        </div>
+
+        {/* Sacred Earth Festival live set */}
+        <div className="mb-6">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
+            Live Set · Missouri 2022
+          </p>
+          <a
+            href="https://soundcloud.com/stackrack/sacred-earth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 p-5 border border-white/8 bg-white/2 hover:border-white/20 hover:bg-white/4 transition-all duration-200"
+          >
+            <div className="flex items-center gap-4 min-w-0">
+              <div className="shrink-0 w-10 h-10 flex items-center justify-center border border-white/10 bg-white/5">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-emerald-400" fill="currentColor">
+                  <path d="M5 3l14 9-14 9V3z" />
+                </svg>
+              </div>
+              <div className="min-w-0">
+                <p className="text-white text-sm font-medium truncate group-hover:text-emerald-400 transition-colors duration-200">
+                  Sacred Earth Festival 2022 [Live Set]
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">
+                  ~90 min &middot; Live Set &middot; St. Louis, Missouri
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-xs tracking-[0.2em] text-gray-500 uppercase group-hover:text-emerald-400 transition-colors duration-200">
+              Listen
+            </span>
+          </a>
+        </div>
+
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-white/8 bg-white/2">
           <div>
             <p className="text-gray-400 text-base">
