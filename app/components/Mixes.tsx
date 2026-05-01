@@ -37,45 +37,78 @@ export default function Mixes() {
           </div>
         </div>
 
-        {/* Mixcloud embeds */}
+        {/* Latest Mixcloud release */}
         <div className="mb-2">
           <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
-            Latest on Mixcloud
+            Latest Mixes Online
           </p>
-          <div className="flex flex-col gap-2">
-            <iframe
-              width="100%"
-              height="120"
-              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FStackRack%2Fstack-rack-live-womb-tokyo%2F"
-              className="border-0 block border border-white/5"
-              title="Stack Rack LIVE @ WOMB, Tokyo"
-              loading="lazy"
-              allow="autoplay"
-            />
-            <iframe
-              width="100%"
-              height="120"
-              src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FStackRack%2F2018-psychedelic-full-on-psytrance-dj-mix%2F"
-              className="border-0 block border border-white/5"
-              title="2018 Psychedelic Full-On Psytrance DJ Mix"
-              loading="lazy"
-              allow="autoplay"
-            />
-          </div>
+          <a
+            href="https://www.mixcloud.com/StackRack/stack-rack-live-womb-tokyo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 p-5 border border-white/8 bg-white/2 hover:border-white/20 hover:bg-white/4 transition-all duration-200"
+          >
+            <div className="flex items-center gap-4 min-w-0">
+              <div className="shrink-0 w-10 h-10 flex items-center justify-center border border-white/10 bg-white/5">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                >
+                  <path d="M5 3l14 9-14 9V3z" />
+                </svg>
+              </div>
+              <div className="min-w-0">
+                <p className="text-white text-sm font-medium truncate group-hover:text-emerald-400 transition-colors duration-200">
+                  Stack Rack LIVE @ WOMB, Tokyo
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">
+                  78 min &middot; Psytrance &middot; Full-on &middot; Twilight
+                  Psytrance
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-xs tracking-[0.2em] text-gray-500 uppercase group-hover:text-emerald-400 transition-colors duration-200">
+              Listen
+            </span>
+          </a>
         </div>
 
-        {/* SoundCloud embed */}
-        <div className="mb-6 border border-white/5">
-          <iframe
-            width="100%"
-            height="166"
-            scrolling="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1296307240&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-            className="border-0 block"
-            title="Stack Rack on SoundCloud"
-            loading="lazy"
-          />
+        {/* SoundCloud */}
+        <div className="mb-6">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-3">
+            On SoundCloud
+          </p>
+          <a
+            href="https://soundcloud.com/stackrack/summer-2022-mini-mix"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 p-5 border border-white/8 bg-white/2 hover:border-white/20 hover:bg-white/4 transition-all duration-200"
+          >
+            <div className="flex items-center gap-4 min-w-0">
+              <div className="shrink-0 w-10 h-10 flex items-center justify-center border border-white/10 bg-white/5">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 text-emerald-400"
+                  fill="currentColor"
+                >
+                  <path d="M5 3l14 9-14 9V3z" />
+                </svg>
+              </div>
+              <div className="min-w-0">
+                <p className="text-white text-sm font-medium truncate group-hover:text-emerald-400 transition-colors duration-200">
+                  Stack Rack Summer 2022 Mini-Mix
+                </p>
+                <p className="text-gray-500 text-xs mt-0.5">
+                  29 min &middot; Psytrance &middot; Full-on &middot; Twilight
+                  Psytrance
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-xs tracking-[0.2em] text-gray-500 uppercase group-hover:text-emerald-400 transition-colors duration-200">
+              Listen
+            </span>
+          </a>
         </div>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-white/8 bg-white/2">
