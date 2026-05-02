@@ -30,7 +30,6 @@ export const metadata: Metadata = {
     "full-on psytrance",
     "night full-on",
     "twilight full-on",
-    "Pedro Ferreira",
     "Goa trance",
     "Goa trance DJ",
     "Sculpted Sounds",
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack. Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     url: SITE_URL,
     siteName: "Stack Rack",
     images: [
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Stack Rack (Pedro Ferreira) — full-on psychedelic trance artist and DJ",
+        alt: "Stack Rack — full-on psychedelic trance artist and DJ",
       },
     ],
     type: "website",
@@ -78,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stack Rack | Full-On Psychedelic Trance",
     description:
-      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack (Pedro Ferreira). Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
+      "Full-on psytrance from the UK underground — explore releases, mixes and live sets from Stack Rack. Dancefloors from London to Tokyo, to the festival circuit. Bookings open.",
     images: [OG_IMAGE],
     creator: "@stackrack",
   },
@@ -90,7 +89,6 @@ const musicGroupSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   name: "Stack Rack",
-  alternateName: "Pedro Ferreira",
   description:
     "Stack Rack has been crafting full-on psychedelic trance since 2003 — driving basslines, soaring arpeggios and hypnotic acid lines shaped by 20+ years on festival dancefloors from USA and Tokyo to the UK underground. Releases on Sculpted Sounds, MMD Records and more.",
   genre: ["Psychedelic trance", "Full-on psytrance", "Goa trance"],
@@ -98,10 +96,6 @@ const musicGroupSchema = {
   foundingLocation: {
     "@type": "Place",
     name: "Portugal",
-  },
-  member: {
-    "@type": "Person",
-    name: "Pedro Ferreira",
   },
   image: OG_IMAGE,
   url: SITE_URL,
@@ -120,23 +114,6 @@ const musicGroupSchema = {
     telephone: "+447472097891",
     availableLanguage: "English",
   },
-};
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Pedro Ferreira",
-  alternateName: [
-    "Stack Rack",
-    "Anthropod",
-    "Alien Devices",
-    "Systematic Audio",
-  ],
-  description:
-    "Pedro Ferreira has been making psychedelic trance music as Stack Rack since 2003. Known for powerful, danceable full-on psytrance with twilight and Goa-inspired moments — releasing on Sculpted Sounds, MMD Records and charting at #3 on Beatport. Available for festivals, clubs and international bookings.",
-  nationality: "Portuguese",
-  url: SITE_URL,
-  sameAs: [SITE_URL],
 };
 
 const websiteSchema = {
@@ -207,10 +184,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(musicGroupSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <script
           type="application/ld+json"

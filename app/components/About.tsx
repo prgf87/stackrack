@@ -18,7 +18,7 @@ export default function About() {
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
             <CldImage
               src="profile-picture_fqm9lm.jpg"
-              alt="Stack Rack (Pedro Ferreira) — full-on psychedelic trance artist and DJ, active since 2003"
+              alt="Stack Rack — full-on psychedelic trance artist and DJ, active since 2003"
               fill
               sizes="(max-width: 768px) 100vw, 38vw"
               className="object-cover object-bottom rounded-md"
@@ -30,7 +30,7 @@ export default function About() {
 
         <div className="space-y-5 text-gray-400 leading-relaxed text-base">
           <p>
-            Stack Rack is the alias of Pedro Ferreira — a UK-based Portuguese
+            Stack Rack is a UK-based Portuguese
             psychedelic trance producer and DJ whose 20-plus year career has
             made him a respected figure in the global full-on and twilight
             psytrance scene. His signature sound combines powerful driving
@@ -109,7 +109,7 @@ export default function About() {
           <p>
             A new 9-track album is in progress alongside forthcoming releases on
             Free-Spirit Records, Phonix Records and MMD Records. Beyond Stack
-            Rack, Pedro also produces as{" "}
+            Rack, he also produces as{" "}
             <span className="text-emerald-400">Anthropod</span> (experimental
             psytrance), <span className="text-emerald-400">Alien Devices</span>{" "}
             (progresive full-on) and{" "}
