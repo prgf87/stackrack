@@ -31,6 +31,13 @@ const RELEASES: Release[] = [
     link: "https://www.beatport.com/release/the-good-the-bad-the-filthy-vol-4-2020-2025/4915647",
   },
   {
+    title: "Strange Transmissions",
+    year: 2025,
+    label: "Bom Shanka Music",
+    cover: "https://f4.bcbits.com/img/a1381286701_10.jpg",
+    link: "https://bomshankamusic.bandcamp.com/track/strange-transmissions-sculpted-sounds",
+  },
+  {
     title: "Psychedelic Therapy 2",
     year: 2024,
     label: "Sculpted Sounds",
