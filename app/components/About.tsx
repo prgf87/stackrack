@@ -31,7 +31,7 @@ export default function About() {
         <div className="space-y-5 text-gray-400 leading-relaxed text-base">
           <p>
             Stack Rack is a UK-based Portuguese
-            psychedelic trance producer and DJ whose 20-plus year career has
+            psychedelic trance producer and DJ whose 20-plus-year career has
             made him a respected figure in the global full-on and twilight
             psytrance scene. His signature sound combines powerful driving
             basslines, intricate percussion, soaring arpeggios and aggressive
@@ -41,14 +41,14 @@ export default function About() {
           </p>
 
           <p>
-            His story began at 15 in Kent, immersed in the underground scene —
+            His story began at 15 in Kent, immersed in the underground scene,
             organising parties, DJing at forest raves and navigating
             London&apos;s legendary squat party circuit. Hallucinogen&apos;s
             seminal album{" "}
             <em className="text-emerald-400 not-italic font-medium">Twisted</em>{" "}
             sparked an obsessive need to understand the mechanics of psychedelic
             music production, setting him on a life-long path of intensive study
-            in music theory, composition and computer music systems — with
+            in music theory, composition and computer music systems, with
             Cubase becoming his primary creative instrument.
           </p>
 
@@ -96,7 +96,7 @@ export default function About() {
           </p>
 
           <p>
-            Stack Rack has now performed across three continents — a five-club
+            Stack Rack has now performed across three continents: a five-club
             week in Tokyo (2023), Touch Samadhi Festival in North Carolina
             (2019), Sacred Earth in Missouri (2022) and Maui Waui Festival, UK.
             He has shared stages with Ace Ventura, Burn in Noise, Laughing
@@ -112,9 +112,8 @@ export default function About() {
             Rack, he also produces as{" "}
             <span className="text-emerald-400">Anthropod</span> (experimental
             psytrance), <span className="text-emerald-400">Alien Devices</span>{" "}
-            (progresive full-on) and{" "}
-            <span className="text-emerald-400">Systematic Audio</span> (techno
-            inspired psytrance).
+            (progressive full-on) and{" "}
+            <span className="text-emerald-400">Systematic Audio</span> (techno-inspired psytrance).
           </p>
         </div>
 

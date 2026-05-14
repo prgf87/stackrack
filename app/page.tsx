@@ -7,6 +7,7 @@ import Mixes from "./components/Mixes";
 import Bookings from "./components/Bookings";
 import Connect from "./components/Connect";
 import Footer from "./components/Footer";
+import LiveDates from "./components/LiveDates";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Mixes />
         <About />
         <Videos />
+        {/* <LiveDates /> */}
         <Bookings />
         <Connect />
       </main>

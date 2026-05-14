@@ -100,7 +100,7 @@ export default function Connect() {
         {/* Newsletter */}
         <div className="max-w-md mx-auto">
           <p className="text-gray-400 text-sm tracking-wide mb-5 uppercase">
-            Stay informed — releases, shows, no spam
+            Stay informed: releases, shows, no spam
           </p>
 
           {status === "success" ? (

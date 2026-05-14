@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div className="pt-6 border-t border-white/4 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-gray-400 text-xs tracking-wide">
-            © Stack Rack - All rights reserved.
+            © Stack Rack · All rights reserved.
           </p>
           <p className="text-gray-500 text-xs">
             Full-On Psychedelic Trance
